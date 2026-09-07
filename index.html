@@ -5,14 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimRacing Fahrzeug-Filter</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
-        .filter-section { display: flex; gap: 15px; margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); align-items: center; }
-        select, input { padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 14px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background-image: url('https://prod.r3eassets.com/assets/content/track/twin-forest-9838-logo-original.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #f4f4f9; 
+        }
+        h1 {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            color: white; 
+        }
+        .filter-section { 
+            display: flex; 
+            gap: 15px; 
+            margin-bottom: 20px; 
+            background: rgba(26, 26, 26, 0.95); 
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+            align-items: center; 
+            border: 1px solid #333;
+        }
+        .filter-section label {
+            color: #e0e0e0;
+        }
+        select, input { 
+            padding: 8px; 
+            border-radius: 4px; 
+            border: 1px solid #444; 
+            font-size: 14px; 
+            background-color: #2b2b2b; 
+            color: white;
+        }
+        select:disabled {
+            background-color: #1a1a1a;
+            color: #666;
+            border-color: #222;
+        }
         .car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-        .car-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid #007bff; display: flex; flex-direction: column; justify-content: space-between; }
-        .tag { display: inline-block; background: #eee; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; margin-bottom: 5px; font-weight: bold; }
-        .tag-serie { background-color: #007bff; color: white; }
-        .tag-index { background-color: #e11d48; color: white; }
+        
+        /* DUNKLER FAHRZEUGKARTEN MIT KORRIGIERTER HELLER SCHRIFT */
+        .car-card { 
+            background: rgba(30, 30, 30, 0.95); 
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4); 
+            border-top: 4px solid #e11d48; 
+            border-left: 1px solid #333;
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+        }
+
+        /* ERZWINGT HELLEN TEXT FÜR ALLES INNERHALB DER KARTE */
+        .car-card, 
+        .car-card h3, 
+        .car-card h4, 
+        .car-card p, 
+        .car-card span, 
+        .car-card div, 
+        .car-card li {
+            color: #ffffff !important; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8); 
+        }
+
+        .car-card .data-label {
+            color: #cccccc !important;
+        }
+
+        .car-card hr {
+            border: 0;
+            border-top: 1px solid #444;
+            margin: 10px 0;
+        }
+
+        /* 🚨 HIER IST DIE KORREKTUR: SCHRIFT IN DEN ZWEI RECHTECKEN UNTEN SCHWARZ/DUNKLER 🚨 */
+        .tag,
+        .car-card .tag { 
+            display: inline-block; 
+            background: #ffffff !important; /* Weißes Rechteck */
+            color: #1a1a1a !important; /* Dunkelgraue/schwarze Schrift */
+            padding: 5px 10px; 
+            border-radius: 4px; 
+            font-size: 12px; 
+            margin-right: 5px; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+            text-shadow: none !important; /* Schatten entfernen für bessere Lesbarkeit */
+            border: 1px solid #ccc;
+        }
+        
+        /* Falls du Serien- oder Index-Tags nutzt, die farbig bleiben sollen */
+        .tag-serie { background-color: #007bff !important; color: white !important; border: none; }
+        .tag-index { background-color: #e11d48 !important; color: white !important; border: none; }
     </style>
 </head>
 <body>
@@ -20,25 +111,25 @@
     <h1>🏎️ SimRacing Serien- & Fahrzeug-Auswahl</h1>
 
     <!-- FILTERBEREICH -->
-<div class="filter-section">
-    <label>Rennserie:
-        <select id="filter-serie">
-            <option value="all">Bitte Serie wählen</option>
-        </select>
-    </label>
-    
-    <label>Klasse:
-        <select id="filter-class" disabled>
-            <option value="all">Alle Klassen</option>
-        </select>
-    </label>
-    
-    <label>Hersteller (Brand):
-        <select id="filter-brand" disabled>
-            <option value="all">Alle Hersteller</option>
-        </select>
-    </label>
-</div>
+    <div class="filter-section">
+        <label>Rennserie:
+            <select id="filter-serie">
+                <option value="all">Bitte Serie wählen</option>
+            </select>
+        </label>
+        
+        <label>Klasse:
+            <select id="filter-class" disabled>
+                <option value="all">Alle Klassen</option>
+            </select>
+        </label>
+        
+        <label>Hersteller (Brand):
+            <select id="filter-brand" disabled>
+                <option value="all">Alle Hersteller</option>
+            </select>
+        </label>
+    </div>
 
     <!-- ERGEBNISSE -->
     <div class="car-grid" id="car-container"></div>
