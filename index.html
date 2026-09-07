@@ -19,6 +19,7 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.8);
             color: white; 
         }
+        /* FILTERBEREICH (Garantiert Platz für alle 4 Felder) */
         .filter-section { 
             display: flex; 
             gap: 15px; 
@@ -29,6 +30,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
             align-items: center; 
             border: 1px solid #333;
+            flex-wrap: wrap; /* Erlaubt das Umbrechen, falls der Bildschirm zu schmal ist */
         }
         .filter-section label {
             color: #e0e0e0;
@@ -48,7 +50,7 @@
         }
         .car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
         
-        /* DUNKLER FAHRZEUGKARTEN MIT KORRIGIERTER HELLER SCHRIFT */
+        /* FAHRZEUGKARTEN */
         .car-card { 
             background: rgba(30, 30, 30, 0.95); 
             padding: 15px; 
@@ -63,7 +65,7 @@
             justify-content: space-between; 
         }
 
-        /* ERZWINGT HELLEN TEXT FÜR ALLES INNERHALB DER KARTE */
+        /* HELLER TEXT FÜR DATEN */
         .car-card, 
         .car-card h3, 
         .car-card h4, 
@@ -85,32 +87,45 @@
             margin: 10px 0;
         }
 
-        /* 🚨 HIER IST DIE KORREKTUR: SCHRIFT IN DEN ZWEI RECHTECKEN UNTEN SCHWARZ/DUNKLER 🚨 */
+        /* RECHTECKE UNTEN (Klasse & Hersteller) */
         .tag,
         .car-card .tag { 
             display: inline-block; 
-            background: #ffffff !important; /* Weißes Rechteck */
-            color: #1a1a1a !important; /* Dunkelgraue/schwarze Schrift */
+            background: #ffffff !important; 
+            color: #1a1a1a !important; 
             padding: 5px 10px; 
             border-radius: 4px; 
             font-size: 12px; 
             margin-right: 5px; 
             margin-bottom: 5px; 
             font-weight: bold; 
-            text-shadow: none !important; /* Schatten entfernen für bessere Lesbarkeit */
+            text-shadow: none !important; 
             border: 1px solid #ccc;
         }
         
-        /* Falls du Serien- oder Index-Tags nutzt, die farbig bleiben sollen */
-        .tag-serie { background-color: #007bff !important; color: white !important; border: none; }
-        .tag-index { background-color: #e11d48 !important; color: white !important; border: none; }
+        /* Strecken-Anzeige auf der Karte */
+        .track-list {
+            margin-top: 8px;
+            font-size: 13px;
+        }
+        .track-badge {
+            display: inline-block;
+            background: #444444 !important;
+            color: #ffffff !important;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            text-shadow: none !important;
+        }
     </style>
 </head>
 <body>
 
     <h1>🏎️ SimRacing Serien- & Fahrzeug-Auswahl</h1>
 
-    <!-- FILTERBEREICH -->
+    <!-- HIER WURDE DAS VIERTE FELD HINZUGEFÜGT -->
     <div class="filter-section">
         <label>Rennserie:
             <select id="filter-serie">
@@ -127,6 +142,13 @@
         <label>Hersteller (Brand):
             <select id="filter-brand" disabled>
                 <option value="all">Alle Hersteller</option>
+            </select>
+        </label>
+
+        <!-- 🚀 DIESES FELD HAT GEFEHLT 🚀 -->
+        <label>Strecke:
+            <select id="filter-track" disabled>
+                <option value="all">Alle Strecken</option>
             </select>
         </label>
     </div>
