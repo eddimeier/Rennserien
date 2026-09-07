@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimRacing Fahrzeug-Filter</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
+        .filter-section { display: flex; gap: 15px; margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); align-items: center; }
+        select, input { padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 14px; }
+        .car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .car-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid #007bff; display: flex; flex-direction: column; justify-content: space-between; }
+        .tag { display: inline-block; background: #eee; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; margin-bottom: 5px; font-weight: bold; }
+        .tag-serie { background-color: #007bff; color: white; }
+        .tag-index { background-color: #e11d48; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>🏎️ SimRacing Serien- & Fahrzeug-Auswahl</h1>
+
+    <!-- FILTERBEREICH -->
+<div class="filter-section">
+    <label>Rennserie:
+        <select id="filter-serie">
+            <option value="all">Bitte Serie wählen</option>
+        </select>
+    </label>
+    
+    <label>Klasse:
+        <select id="filter-class" disabled>
+            <option value="all">Alle Klassen</option>
+        </select>
+    </label>
+    
+    <label>Hersteller (Brand):
+        <select id="filter-brand" disabled>
+            <option value="all">Alle Hersteller</option>
+        </select>
+    </label>
+</div>
+
+    <!-- ERGEBNISSE -->
+    <div class="car-grid" id="car-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
