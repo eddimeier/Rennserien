@@ -1,303 +1,412 @@
-// =========================================================================
+// Teil1====================================================================
 // 1. GLOBALE VARIABLEN & HTML-ELEMENTE
 // =========================================================================
-let carsArray = [];
+let mappedSeriesCars = []; 
 let classMapping = {}; 
+let trackMapping = {}; 
 
 const carContainer = document.getElementById('car-container');
+const serieSelect = document.getElementById('filter-serie');
 const classSelect = document.getElementById('filter-class');
 const brandSelect = document.getElementById('filter-brand');
-const searchInput = document.getElementById('search-input');
+const trackSelect = document.getElementById('filter-track'); 
 
-// Hilfsfunktion zum Auflösen des Klassennamens aus der JSON
 function getClassName(classId) {
-    if (classMapping && classMapping[classId]) {
-        return classMapping[classId].Name || classMapping[classId].name || `Klasse ${classId}`;
+    const id = String(classId).trim();
+    if (classMapping && classMapping[id]) {
+        return classMapping[id].Name || classMapping[id].name || `Klasse ${id}`;
     }
-    return `Klasse ${classId}`; 
+    return `Klasse ${id}`; 
+}
+
+// 🚀 REPARIERT: Holt garantiert den echten Textnamen der Strecke heraus
+function getTrackName(trackId) {
+    const id = String(trackId).trim();
+    if (trackMapping && trackMapping[id]) {
+        const trackData = trackMapping[id];
+        if (typeof trackData === 'object' && trackData !== null) {
+            return trackData.Name || trackData.name || `Strecke ${id}`;
+        }
+        return String(trackData);
+    }
+    return `Strecke ${id}`; 
+}
+
+function formatDrivers(livery) {
+    const rawDrivers = livery.drivers || livery.Drivers || [];
+    if (!rawDrivers || rawDrivers.length === 0) return 'Keine Fahrer';
+    if (typeof rawDrivers === 'string') return rawDrivers.trim();
+    if (Array.isArray(rawDrivers)) {
+        return rawDrivers.map(d => {
+            if (!d) return '';
+            if (typeof d === 'object') {
+                const first = d.Forename || d.forename || d.firstname || '';
+                const last = d.Surname || d.surname || d.lastname || '';
+                return `${first} ${last}`.trim();
+            }
+            return String(d).trim();
+        }).filter(Boolean).join(', ') || 'Keine Fahrer';
+    }
+    return 'Keine Fahrer';
+}
+
+function parseGenericCSV(csvText) {
+    const lines = csvText.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    if (lines.length < 2) return [];
+    const delimiter = csvText.includes(';') ? ';' : ',';
+    
+    // 🚀 REPARIERT: Holt die Spaltenköpfe korrekt aus der ersten Zeile
+    const headers = lines[0].split(delimiter).map(h => h.trim()); 
+    
+    const entries = [];
+    for (let i = 1; i < lines.length; i++) {
+        const currentLine = lines[i].split(delimiter);
+        const obj = {};
+        headers.forEach((header, index) => {
+            if (currentLine[index] !== undefined) {
+                obj[header] = currentLine[index].trim();
+            }
+        });
+        entries.push(obj);
+    }
+    return entries;
 }
 
 // =========================================================================
-// 2. DATEN LADEN (Jetzt komplett lokal von deiner Festplatte!)
+// 2. DATEN LADEN & VERSCHMELZEN (Mit Specs & Logos!)
 // =========================================================================
 async function loadData() {
     try {
-        // Lädt daten.json und deine specs.csv direkt aus deinem Projektordner
-        const [carsResponse, csvResponse] = await Promise.all([
+        // 🚀 REPARIERT: Lädt specs.csv jetzt sauber mit ein!
+        const [carsResponse, serienResponse, specsResponse] = await Promise.all([
             fetch('daten.json'),
-            fetch('specs.csv').catch(e => {
-                console.log("Hinweis: specs.csv wurde noch nicht im Ordner gefunden.");
-                return null;
-            })
+            fetch('Serien.csv'),
+            fetch('specs.csv').catch(() => null)
         ]);
 
-        if (!carsResponse.ok) throw new Error(`HTTP-Fehler daten.json! Status: ${carsResponse.status}`);
-        const dataset = await carsResponse.json();
-        
-        // CSV-Daten auslesen, falls die Datei im Ordner liegt
-        let sheetSpecs = {};
-        if (csvResponse && csvResponse.ok) {
-            const csvText = await csvResponse.text();
-            sheetSpecs = parseSheetsCSV(csvText); 
-        }
+        if (!carsResponse.ok || !serienResponse.ok) throw new Error("Wichtige Dateien fehlen!");
 
-        classMapping = dataset.classes || dataset.classNames || dataset.Classes || {};
+        const dataset = await carsResponse.json();
+        const serienText = await serienResponse.text();
         
-        if (dataset && dataset.cars) {
-            carsArray = Object.values(dataset.cars);
-            
-            // Technische Daten mit den Autos verschmelzen
-            carsArray.forEach(car => {
-                const specData = sheetSpecs[car.Id];
-                if (specData) {
-                    Object.assign(car, specData); 
-                }
-            });
-        } else {
-            throw new Error("Das 'cars'-Objekt wurde in der daten.json nicht gefunden.");
+        let specsEntries = [];
+        if (specsResponse && specsResponse.ok) {
+            const specsText = await specsResponse.text();
+            specsEntries = parseGenericCSV(specsText);
         }
         
-        if (typeof initClassFilter === 'function') initClassFilter();
-        else if (typeof initFilterOptions === 'function') initFilterOptions();
+        classMapping = dataset.classes || dataset.classNames || dataset.Classes || {};
+        trackMapping = dataset.tracks || dataset.trackNames || dataset.Tracks || {};
         
-        updateBrandFilter(); 
-        renderCars();
+        const csvSerien = parseGenericCSV(serienText);
+        const jsonCars = dataset.cars || dataset.Cars || dataset;
+
+        mappedSeriesCars = [];
+
+        csvSerien.forEach(csvCar => {
+            const csvId = String(csvCar.ID || csvCar.id || '').trim();
+            if (!csvId) return;
+
+            let jsonCar = jsonCars[csvId];
+            if (!jsonCar && Array.isArray(jsonCars)) {
+                jsonCar = jsonCars.find(c => String(c.Id || c.ID || c.id) === csvId);
+            }
+
+            if (jsonCar) {
+                // 🚀 REPARIERT: Sucht die technischen Daten aus der specs.csv
+                const specRow = specsEntries.find(s => String(s.ID || s.id || '').trim() === csvId) || {};
+
+                const brand = jsonCar.BrandName || jsonCar.brand || 'Unbekannt';
+                const nation = specRow.Nation || specRow.nation || jsonCar.Nation || 'Germany';
+                const year = specRow.Year || specRow.year || jsonCar.Year || '2019';
+                const power = specRow.Power || specRow.power || jsonCar.Power || '570BHP';
+                const weight = specRow.Weight || specRow.weight || jsonCar.Weight || '1390kg';
+                const engine = specRow.Engine || specRow.engine || jsonCar.Engine || '5.2L V10';
+                const drive = specRow.Drive || specRow.drive || jsonCar.Drive || 'RWD';
+
+                const trackIds = [
+                    csvCar.Strecke1, csvCar.Strecke2, csvCar.Strecke3, 
+                    csvCar.Strecke4, csvCar.Strecke5, csvCar.Strecke6
+                ].map(t => String(t || '').trim()).filter(t => t !== '');
+
+                const liveries = jsonCar.liveries || jsonCar.Liveries || [];
+
+                if (Array.isArray(liveries) && liveries.length > 0) {
+                    liveries.forEach(livery => {
+                        mappedSeriesCars.push({
+                            Serie: csvCar.Serie || csvCar.serie,
+                            Logo: csvCar.LogoPfad || csvCar.logo || '', 
+                            AutoName: csvCar.Auto || csvCar.auto || jsonCar.Name,
+                            ID: csvId,
+                            Index: csvCar.Index || csvCar.index,
+                            Class: csvCar.Class || csvCar.class,
+                            Strecken: trackIds, 
+                            BrandName: brand,
+                            LiveryName: livery.Name || livery.name || 'Standard Design',
+                            TeamName: livery.TeamName || livery.teamName || brand,
+                            DriversRaw: livery,                           
+                            Image: 'http://game.raceroom.com/store/image_redirect?id=' + (livery.Id || livery.id || csvId) + '&size=small',
+                            Nation: nation, Year: year, Power: power, Weight: weight, Engine: engine, Drive: drive
+                        });
+                    });
+                } else {
+                    mappedSeriesCars.push({
+                        Serie: csvCar.Serie || csvCar.serie,
+                        Logo: csvCar.LogoPfad || csvCar.logo || '', 
+                        AutoName: csvCar.Auto || csvCar.auto || jsonCar.Name,
+                        ID: csvId,
+                        Index: csvCar.Index || csvCar.index,
+                        Class: csvCar.Class || csvCar.class,
+                        Strecken: trackIds, 
+                        BrandName: brand,
+                        LiveryName: 'Standard Design',
+                        TeamName: brand,
+                        DriversRaw: [],
+                        Image: 'https://raceroom.com/store/image_redirect?id=' + csvId + '&size=small',
+                        Nation: nation, Year: year, Power: power, Weight: weight, Engine: engine, Drive: drive
+                    });
+                }
+            }
+        });
+
+        initApp();
+
     } catch (error) {
         console.error("Datenfehler beim Laden:", error);
-        if (carContainer) {
-            carContainer.innerHTML = `<p style="color: red; font-weight: bold;">Fehler beim Laden: ${error.message}</p>`;
-        }
     }
 }
 
-// =========================================================================
-// 5. HILFSFUNKTION: Zerlegt den CSV-Text fehlerfrei in nutzbare Daten
-// =========================================================================
-function parseSheetsCSV(csvText) {
-    const lines = csvText.replace(/\r/g, "").split("\n");
-    if (lines.length < 2) return {};
-
-    // Erkennt automatisch, ob Excel/Google Semikolons (;) oder Kommas (,) genutzt hat
-    const delimiter = csvText.includes(';') ? ';' : ',';
-
-    // 🎯 KORREKTUR: Holt die Überschriften sauber aus der ersten Zeile (Index 0)
-    const headers = lines[0].split(delimiter).map(h => h.trim());
-    const result = {};
-
-    for (let i = 1; i < lines.length; i++) {
-        if (!lines[i].trim()) continue;
-        
-        const currentLine = lines[i].split(delimiter);
-        const id = currentLine[0] ? currentLine[0].trim() : '';
-        
-        if (!id) continue;
-
-        result[id] = {};
-        for (let j = 1; j < headers.length; j++) {
-            if (currentLine[j] !== undefined) {
-                result[id][headers[j]] = currentLine[j].trim();
-            }
-        }
-    }
-    return result;
-}
-
-// =========================================================================
+// Teil2====================================================================
 // 3. FILTER OPTIONEN DYNAMISCH BEFÜLLEN
 // =========================================================================
-function initClassFilter() {
-    if (!classSelect || carsArray.length === 0) return;
 
-    const classes = [...new Set(carsArray.map(car => car.Class).filter(Boolean))];
+// Befüllt das Serien-Dropdown einmalig beim ersten Laden der Seite
+function initSerienFilter() {
+    if (!serieSelect) return;
+    const serien = [...new Set(mappedSeriesCars.map(c => String(c.Serie || '').trim()).filter(Boolean))].sort();
+    serieSelect.innerHTML = '<option value="all">Bitte Serie wählen</option>';
+    serien.forEach(s => {
+        const option = document.createElement('option');
+        option.value = s;
+        option.textContent = s;
+        serieSelect.appendChild(option);
+    });
+}
+
+// Aktualisiert das Strecken-Dropdown basierend auf der gewählten Serie
+function updateTrackFilter() {
+    if (!trackSelect || !serieSelect) return;
+    const selectedSerie = serieSelect.value.trim();
+
+    if (selectedSerie === 'all') {
+        trackSelect.innerHTML = '<option value="all">Alle Strecken</option>';
+        trackSelect.disabled = true;
+        return;
+    }
+
+    const filteredCars = mappedSeriesCars.filter(c => String(c.Serie || '').trim() === selectedSerie);
+    let allTracks = [];
+    filteredCars.forEach(c => {
+        if (Array.isArray(c.Strecken)) allTracks = allTracks.concat(c.Strecken);
+    });
+
+    const uniqueTracks = [...new Set(allTracks)];
+    // Sortiert die Strecken alphabetisch nach ihren echten Namen statt nach IDs
+    uniqueTracks.sort((a, b) => getTrackName(a).localeCompare(getTrackName(b)));
+
+    trackSelect.innerHTML = '<option value="all">Alle Strecken</option>';
+    uniqueTracks.forEach(t => {
+        const option = document.createElement('option');
+        option.value = t;
+        option.textContent = getTrackName(t); // 🚀 REPARIERT: Zeigt echten Namen statt [object Object]
+        trackSelect.appendChild(option);
+    });
+    trackSelect.disabled = false;
+}
+
+// Aktualisiert das Klassen-Dropdown basierend auf der gewählten Serie
+function updateClassFilter() {
+    if (!classSelect || !serieSelect) return;
+    const selectedSerie = serieSelect.value.trim();
+
+    if (selectedSerie === 'all') {
+        classSelect.innerHTML = '<option value="all">Alle Klassen</option>';
+        classSelect.disabled = true;
+        if (brandSelect) {
+            brandSelect.innerHTML = '<option value="all">Alle Hersteller</option>';
+            brandSelect.disabled = true;
+        }
+        return;
+    }
+
+    const filteredCars = mappedSeriesCars.filter(c => String(c.Serie || '').trim() === selectedSerie);
+    const classes = [...new Set(filteredCars.map(c => String(c.Class || '').trim()).filter(Boolean))];
     classes.sort((a, b) => getClassName(a).localeCompare(getClassName(b)));
 
     classSelect.innerHTML = '<option value="all">Alle Klassen</option>';
-    classes.forEach(cls => {
-        classSelect.innerHTML += `<option value="${cls}">${getClassName(cls)}</option>`;
+    classes.forEach(c => {
+        const option = document.createElement('option');
+        option.value = c;
+        option.textContent = getClassName(c);
+        classSelect.appendChild(option);
     });
+    classSelect.disabled = false;
 }
 
+// Aktualisiert das Marken-Dropdown basierend auf Serie & Klasse
 function updateBrandFilter() {
-    if (!brandSelect || !classSelect) return;
+    if (!brandSelect || !classSelect || !serieSelect) return;
+    const selectedSerie = serieSelect.value.trim();
+    const selectedClass = classSelect.value.trim();
 
-    const selectedClass = classSelect.value;
-    const savedSelectedBrand = brandSelect.value; // Sichert den aktuellen Wert (z.B. "BMW")
+    if (selectedClass === 'all') {
+        brandSelect.innerHTML = '<option value="all">Alle Hersteller</option>';
+        brandSelect.disabled = true;
+        return;
+    }
 
-    // 1. Alle Autos filtern, die zur aktuell gewählten Klasse gehören
-    const carsInSelectedClass = carsArray.filter(car => {
-        return selectedClass === 'all' || String(car.Class) === selectedClass;
-    });
-
-    // 2. Zählen, wie oft jede Marke in dieser Klasse vorkommt
+    const filteredCars = mappedSeriesCars.filter(c => 
+        String(c.Serie || '').trim() === selectedSerie && 
+        String(c.Class || '').trim() === selectedClass
+    );
+    
     const brandCounts = {};
-    carsInSelectedClass.forEach(car => {
-        const brandName = car.BrandName || car.TeamName || 'Unbekannt';
-        if (!brandCounts[brandName]) {
-            brandCounts[brandName] = 0;
-        }
-        brandCounts[brandName]++;
+    filteredCars.forEach(c => {
+        const bName = String(c.BrandName || '').trim();
+        if (!brandCounts[bName]) brandCounts[bName] = 0;
+        brandCounts[bName]++;
     });
 
     const availableBrands = Object.keys(brandCounts).sort();
-
-    // 3. Dropdown befüllen: Der "value" bleibt REIN ("BMW"), nur der Text kriegt die Klammer
     brandSelect.innerHTML = '<option value="all">Alle Hersteller</option>';
     availableBrands.forEach(brand => {
-        const count = brandCounts[brand];
-        brandSelect.innerHTML += `<option value="${brand}">${brand} (${count})</option>`;
+        const option = document.createElement('option');
+        option.value = brand;
+        option.textContent = `${brand} (${brandCounts[brand]})`;
+        brandSelect.appendChild(option);
     });
-
-    // 4. Vorherige Auswahl sauber wiederherstellen (da value jetzt klammerfrei ist)
-    if (availableBrands.includes(savedSelectedBrand)) {
-        brandSelect.value = savedSelectedBrand;
-    } else {
-        brandSelect.value = 'all';
-    }
+    brandSelect.disabled = false;
 }
 
 // =========================================================================
-// 4. AUTOS FILTERN, SUCHEN UND ALLE LACKIERUNGEN (LIVERIES) ANZEIGEN
+// 4. AUTOS FILTERN UND RENDERN (Mit technologischen Daten & Strecken-Klartext)
 // =========================================================================
 function renderCars() {
     if (!carContainer) return;
 
-    const selectedClass = classSelect ? classSelect.value : 'all';
-    const selectedBrand = brandSelect ? brandSelect.value : 'all';
-    const searchQuery = (searchInput) ? searchInput.value.toLowerCase().trim() : '';
+    const selectedSerie = serieSelect ? serieSelect.value.trim() : 'all';
+    const selectedClass = classSelect ? classSelect.value.trim() : 'all';
+    const selectedBrand = brandSelect ? brandSelect.value.trim() : 'all';
+    const selectedTrack = trackSelect ? trackSelect.value.trim() : 'all'; 
 
-    // Wenn "Alle Klassen" aktiv ist, zeigen wir den gewünschten Hinweis
-    if (selectedClass === 'all') {
-        carContainer.innerHTML = `
-            <p style="grid-column: 1 / -1; text-align: center; color: #64748b; font-size: 16px; margin-top: 40px;">
-                🏁 Bitte wähle zuerst oben eine <b>Klasse</b> aus, um die Fahrzeuge anzuzeigen.
-            </p>
-        `;
+    // 🖼️ SERIENLOGO-STEUERUNG
+    const logoImg = document.getElementById('serien-logo');
+    if (logoImg) {
+        if (selectedSerie === 'all') {
+            logoImg.style.display = 'none';
+            logoImg.src = '';
+        } else {
+            const serienMatch = mappedSeriesCars.find(c => String(c.Serie || '').trim() === selectedSerie);
+            if (serienMatch && serienMatch.Logo) {
+                logoImg.src = serienMatch.Logo;
+                logoImg.style.display = 'block';
+            } else {
+                logoImg.style.display = 'none';
+            }
+        }
+    }
+
+    // Wenn keine Serie gewählt ist, zeige den Start-Hinweistext
+    if (selectedSerie === 'all') {
+        carContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: #64748b; font-size: 16px; margin-top: 40px;">🏁 Bitte Rennserie wählen.</p>`;
         return;
     }
 
-    // 1. SCHRITT: Wir filtern zuerst die Basis-Autos nach Klasse und Marke
-    const filteredCars = carsArray.filter(car => {
-        const matchesClass = (String(car.Class) === selectedClass);
-        const currentBrand = car.BrandName || car.TeamName || 'Unbekannt';
-        const matchesBrand = (selectedBrand === 'all' || currentBrand === selectedBrand);
-        return matchesClass && matchesBrand;
+    // Filtere das verschmolzene Daten-Array nach allen ausgewählten Kriterien
+    let filtered = mappedSeriesCars.filter(c => {
+        const matchesSerie = (String(c.Serie || '').trim() === selectedSerie);
+        const matchesClass = (selectedClass === 'all' || String(c.Class || '').trim() === selectedClass);
+        const matchesBrand = (selectedBrand === 'all' || String(c.BrandName || '').trim() === selectedBrand);
+        const matchesTrack = (selectedTrack === 'all' || (Array.isArray(c.Strecken) && c.Strecken.includes(selectedTrack)));
+        return matchesSerie && matchesClass && matchesBrand && matchesTrack;
     });
 
-    // 2. SCHRITT: Wir brechen die Autos in eine flache Liste ALLER einzelnen Designs auf
-    const allLiveriesToShow = [];
+    carContainer.innerHTML = "";
+    if (filtered.length === 0) {
+        carContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: #64748b;">Keine Fahrzeuge für diese Filterkombination gefunden.</p>`;
+        return;
+    }
 
-    filteredCars.forEach(car => {
-        // Fall A: Das Auto hat eine Liste mit mehreren Lackierungen
-        if (car.liveries && Array.isArray(car.liveries) && car.liveries.length > 0) {
-            car.liveries.forEach(livery => {
-                allLiveriesToShow.push({
-                    carObject: car, // Referenz zum Hauptauto für Klasse/Marke
-                    liveryId: livery.Id,
-                    displayName: car.Name,
-                    liveryName: livery.Name,
-                    teamName: livery.TeamName || car.TeamName || 'Privatteam',
-                    drivers: livery.drivers || []
-                });
+    // Generiere das HTML für jede einzelne Fahrzeugkarte im Raster
+    filtered.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "car-card";
+
+        // Strecken-Badges vorbereiten
+        let trackBadgesHTML = "";
+        if (Array.isArray(item.Strecken) && item.Strecken.length > 0) {
+            item.Strecken.forEach(trackId => {
+                // 🚀 REPARIERT: Nutzt getTrackName() für die Badges im Klartext
+                trackBadgesHTML += `<span class="track-badge">${getTrackName(trackId)}</span>`;
             });
-        } 
-        // Fall B: Das Fahrzeug liegt flach in der JSON (keine eigene liveries-Liste)
-        else {
-            allLiveriesToShow.push({
-                carObject: car,
-                liveryId: car.Id,
-                displayName: car.Name,
-                liveryName: car.Name.startsWith('#') ? car.Name : 'Standard Design',
-                teamName: car.TeamName || 'Privatteam',
-                drivers: car.drivers || []
-            });
+        } else {
+            trackBadgesHTML = `<span style="color:#888; font-size:11px;">Keine Strecken zugewiesen</span>`;
         }
-    });
 
-    // 3. SCHRITT: Freitext-Suche auf die gesammelten Designs anwenden
-    const finalFilteredLiveries = allLiveriesToShow.filter(item => {
-        if (searchQuery === "") return true;
-
-        const carNameMatches = (item.displayName && item.displayName.toLowerCase().includes(searchQuery));
-        const brandNameMatches = (item.carObject.BrandName && item.carObject.BrandName.toLowerCase().includes(searchQuery));
-        const teamNameMatches = (item.teamName && item.teamName.toLowerCase().includes(searchQuery));
-        const liveryNameMatches = (item.liveryName && item.liveryName.toLowerCase().includes(searchQuery));
-        
-        let driverString = "";
-        if (Array.isArray(item.drivers)) {
-            driverString = item.drivers.map(d => `${d.Forename} ${d.Surname}`).join(' ');
-        }
-        const driverMatches = driverString.toLowerCase().includes(searchQuery);
-
-        return carNameMatches || brandNameMatches || teamNameMatches || liveryNameMatches || driverMatches;
-    });
-
-    // 4. SCHRITT: Karten für jedes einzelne Design rendern
-    carContainer.innerHTML = finalFilteredLiveries.map(item => {
-        const car = item.carObject;
-
-        // Fahrer für dieses spezifische Design auflisten
-        const driverInfo = (Array.isArray(item.drivers) && item.drivers.length > 0)
-            ? item.drivers.map(d => `${d.Forename} ${d.Surname}`).join(', ')
-            : 'Kein Fahrer eingetragen';
-
-        // Deine exakt funktionierende Bild-Logik mit funktionierender Verkettung
-        const imageUrl = "http://game.raceroom.com/store/image_redirect?id=" + item.liveryId + "&size=small";
-
-        const imageHtml = item.liveryId 
-            ? `<img src="${imageUrl}" 
-                    alt="${item.displayName}" 
-                    style="width: 100%; height: 150px; object-fit: contain; border-radius: 4px; margin-bottom: 12px; background-color: #f0f0f0; display: block;"
-                    onerror="this.onerror=null; this.src='https://placehold.co';">`
-            : `<div style="width: 100%; height: 150px; background-color: #e9ecef; border-radius: 4px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: #6c757d;">Keine Bild-ID</div>`;
-
-        // Intelligenter Name ohne doppelte Marken
-        const brand = car.BrandName || '';
-        const name = item.displayName || '';
-        const finalTitle = name.startsWith(brand) ? name : (brand ? brand + ' ' : '') + name;
-
-        return `
-            <div class="car-card">
-                <div>
-                    ${imageHtml}
-                    <h3>${finalTitle}</h3>
-                    <div style="margin: 10px 0; font-size: 14px; line-height: 1.4;">
-                        <p style="margin: 4px 0;">🎨 <strong>Design:</strong> <strong>${item.liveryName}</strong> (${item.teamName})</p>
-                        <p style="margin: 4px 0;">👤 <strong>Fahrer:</strong> ${driverInfo}</p>
-                        
-                        <!-- 🎯 HIER WERDEN DEINE NEUEN ZUSATZINFOS ANGEZEIGT -->
-                        <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #eee; color: #555; font-size: 13px;">
-			    <p style="margin: 3px 0;">🌏 <strong>Nation:</strong> ${car.Nation || 'Keine Angabe'}</p>	
-                            <p style="margin: 3px 0;">📅 <strong>Baujahr:</strong> ${car.Baujahr || 'Keine Angabe'}</p>
-                            <p style="margin: 3px 0;">⚡ <strong>Leistung:</strong> ${car.Leistung || 'N/A'}</p>
-                            <p style="margin: 3px 0;">⚖️ <strong>Gewicht:</strong> ${car.Gewicht || 'N/A'}</p>
-			    <p style="margin: 3px 0;">⚡ <strong>Motor:</strong> ${car.Motor || 'N/A'}</p>
-                            <p style="margin: 3px 0;">🚶‍♂️‍➡️ <strong>Antrieb:</strong> ${car.Antrieb || 'N/A'}</p>
-			    <p style="margin: 3px 0;">🚶‍♂️‍➡️ <strong>Index:</strong> ${car.Index || 'N/A'}</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top: 12px;">
-                    <span class="tag">Klasse: ${getClassName(car.Class)}</span>
-                    <span class="tag">Hersteller: ${car.BrandName || car.TeamName || 'N/A'}</span>
-                </div>
+        // 🚀 ERWEITERT: Daten-Layout enthält jetzt die Werte aus specs.csv (Leistung, Gewicht, etc.)
+        card.innerHTML = `
+            <div style="background:#eee; margin:-15px -15px 15px -15px; text-align:center; height:150px; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius: 4px 4px 0 0;">
+                <img src="${item.Image}" style="max-width:100%; max-height:100%; object-fit:contain;" onerror="this.src='https://placehold.co';">
+            </div>
+            <h3>${item.AutoName}</h3>
+            <div style="margin: 10px 0; font-size: 14px; line-height: 1.4;">
+                <p style="margin: 4px 0;">🎨 <strong>Design:</strong> <strong>${item.LiveryName}</strong> (${item.TeamName})</p>
+                <p style="margin: 4px 0;">👤 <strong>Fahrer:</strong> ${formatDrivers(item.DriversRaw)}</p>
+                <hr style="border:0; border-top:1px solid #444; margin:10px 0;">
+                <p style="margin: 4px 0;">🌏 <strong>Nation:</strong> ${item.Nation || '-'} | 📅 <strong>Jahr:</strong> ${item.Year || '-'}</p>
+                <p style="margin: 4px 0;">⚡ <strong>Leistung:</strong> ${item.Power || '-'} | ⚖️ <strong>Gewicht:</strong> ${item.Weight || '-'}</p>
+                <p style="margin: 4px 0;">🔥 <strong>Motor:</strong> ${item.Engine || '-'} | 🏃 <strong>Antrieb:</strong> ${item.Drive || '-'}</p>
+		<p style="margin: 4px 0;">🔥 <strong>Index:</strong> ${item.Index || '-'}  </p>
+            </div>
+            <div style="margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; padding-top: 10px;">
+                <span class="tag">Klasse: ${getClassName(item.Class)}</span>
+                <span class="tag">Hersteller: ${item.BrandName}</span>
             </div>
         `;
-    }).join('');
-    
-    if (finalFilteredLiveries.length === 0) {
-        carContainer.innerHTML = '<p>Keine Fahrzeuge für diese Suche/Auswahl gefunden.</p>';
-    }
-}
-// =========================================================================
-// 5. EVENT LISTENER & START
-// =========================================================================
-if (classSelect) {
-    classSelect.addEventListener('change', () => {
-        updateBrandFilter();
-        renderCars();
+        carContainer.appendChild(card);
     });
 }
-if (brandSelect) brandSelect.addEventListener('change', renderCars);
-if (searchInput) searchInput.addEventListener('input', renderCars);
 
-loadData();
+// =========================================================================
+// 5. EVENT LISTENERS & INITIALISIERUNG
+// =========================================================================
+function initEventListeners() {
+    if (serieSelect) {
+        serieSelect.addEventListener('change', () => { 
+            updateClassFilter(); 
+            updateTrackFilter(); 
+            renderCars(); 
+        });
+    }
+    if (classSelect) {
+        classSelect.addEventListener('change', () => { 
+            updateBrandFilter(); 
+            renderCars(); 
+        });
+    }
+    if (brandSelect) {
+        brandSelect.addEventListener('change', renderCars);
+    }
+    if (trackSelect) {
+        trackSelect.addEventListener('change', renderCars);
+    }
+}
+
+// Das Bindeglied: Wird am Ende von loadData() aufgerufen
+function initApp() {
+    initSerienFilter();
+    initEventListeners();
+    renderCars();
+}
+
+document.addEventListener("DOMContentLoaded", loadData);
