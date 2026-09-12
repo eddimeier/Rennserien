@@ -1,0 +1,308 @@
+/* ALLGEMEINES STYLING & HINTERGRUND */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 20px;
+    
+    /* 🚀 NEU: Bindet dein RaceRoom-Bild ein */
+    background-image: url('logos/R3E.jpg'); 
+    
+    /* Sorgt dafür, dass das Bild den gesamten Bildschirm ausfüllt ohne Verzerrung */
+    background-size: cover;
+    
+    /* Zentriert das Logo im Hintergrund */
+    background-position: center;
+    
+    /* Verhindert, dass sich das Bild kachelartig wiederholt */
+    background-repeat: no-repeat;
+    
+    /* Fixiert den Hintergrund, sodass er beim Scrollen stehen bleibt */
+    background-attachment: fixed;
+    
+    color: #f4f4f9; 
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    color: white; 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 📐 DREI-SPALTEN GRID-LAYOUT (RaceRoom-Stil) */
+.layout-container {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px; /* Links Filter, Mitte Karten, Rechts Strecken */
+    gap: 20px;
+    align-items: start;
+}
+
+/* 1. LINKE SPALTE: LOGO & FILTER */
+.left-sidebar {
+    background: rgba(26, 26, 26, 0.95); 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Container für das dynamische Serien-Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+}
+
+#serien-logo {
+    max-width: 100%;
+    max-height: 110px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+/* Filter-Dropdowns untereinander */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-group label {
+    color: #cccccc;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+select, input { 
+    padding: 10px; 
+    border-radius: 4px; 
+    border: 1px solid #444; 
+    font-size: 14px; 
+    background-color: #2b2b2b; 
+    color: white;
+    width: 100%;
+}
+
+select:disabled {
+    background-color: #1a1a1a;
+    color: #666;
+    border-color: #222;
+}
+
+/* 2. MITTLERE SPALTE: FAHRZEUG-KARTEN GRID */
+.car-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 20px; 
+}
+
+/* FAHRZEUGKARTEN */
+.car-card { 
+    background: rgba(30, 30, 30, 0.95); 
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4); 
+    border-top: 4px solid #e11d48; 
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+/* HELLER TEXT FÜR DATEN */
+.car-card, .car-card h3, .car-card h4, .car-card p, .car-card span, .car-card div, .car-card li {
+    color: #ffffff !important; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); 
+}
+
+.car-card .data-label {
+    color: #cccccc !important;
+}
+
+.car-card hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 10px 0;
+}
+
+/* RECHTECKE UNTEN (Klasse & Hersteller) */
+.tag, .car-card .tag { 
+    display: inline-block; 
+    background: #ffffff !important; 
+    color: #1a1a1a !important; 
+    padding: 5px 10px; 
+    border-radius: 4px; 
+    font-size: 12px; 
+    margin-right: 5px; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    text-shadow: none !important; 
+    border: 1px solid #ccc;
+}
+
+/* Strecken-Anzeige auf der Karte */
+.track-list {
+    margin-top: 8px;
+    font-size: 13px;
+}
+.track-badge {
+    display: inline-block;
+    background: #444444 !important;
+    color: #ffffff !important;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    text-shadow: none !important;
+}
+
+/* 3. RECHTE SPALTE: RENNKALENDER (RENNEN 1 BIS 6) */
+.right-sidebar {
+    background: rgba(26, 26, 26, 0.95); 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+    border: 1px solid #333;
+}
+
+.schedule-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e11d48;
+    padding-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.rounds-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.round-card {
+    display: flex;
+    flex-direction: column; /* Bringt Text unter das Bild */
+    gap: 10px;
+    padding: 12px;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 6px;
+    border-left: 4px solid transparent;
+    transition: background 0.2s ease;
+}
+
+/* Rotes Highlight für das aktive Rennen */
+.round-card.active {
+    border-left: 4px solid #e11d48;
+    background: rgba(60, 60, 60, 0.9);
+}
+
+/* 💡 BILD-CONTAINER VERGRÖSSERT: Nimmt jetzt die volle Breite (100%) und mehr Höhe ein */
+.track-layout-mini {
+    width: 100%;
+    height: 120px; /* Von 40px auf 90px erhöht für eine markante Anzeige */
+    background: #111111;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 5px;
+    overflow: hidden;
+}
+
+/* Verhindert das Verzerren des Streckenlayouts im großen Kasten */
+.track-layout-mini img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Erhält die Proportionen der Rennstrecke exakt */
+}
+
+/* Text-Zentrierung unter dem Bild */
+.round-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left; /* Kann auf 'center' gesetzt werden, falls gewünscht */
+    padding-left: 2px;
+}
+.round-number {
+    font-size: 10px;
+    color: #e11d48;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.track-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.3px; /* Macht den Text noch einen Tick edler */
+    margin-top: 1px;       /* Minimaler Abstand zur roten Renn-Nummer */
+}
+
+.round-date {
+    font-size: 11px;
+    color: #aaaaaa;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1100px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+    }
+    .left-sidebar, .right-sidebar {
+        width: 100%;
+    }
+}
+/* Styling für die Serien-Zusatzinfos unter dem Logo */
+.series-extra-info {
+    background: rgba(43, 43, 43, 0.6);
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.meta-item {
+    color: #e0e0e0;
+}
+
+.meta-item span {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* 🚀 NEU: Styling für die Strecken-Variante im Kalender */
+.layout-variant-name {
+    font-size: 13px;
+    color: #aaaaaa; /* Dezentes Grau wie im echten RaceRoom-Menü */
+    font-weight: normal;
+    margin-top: 2px;
+    text-transform: uppercase; /* Macht es schön kompakt */
+    letter-spacing: 0.5px;
+}
+
+/* Sorgt dafür, dass sich das Lizenzbild perfekt an die linke Spalte anpasst */
+#sidebar-license-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
