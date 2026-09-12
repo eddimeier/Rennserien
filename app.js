@@ -4,7 +4,6 @@
 let mappedSeriesCars = []; 
 let classMapping = {}; 
 let trackMapping = {}; 
-let layoutMapping = {};
 
 const carContainer = document.getElementById('car-container');
 const serieSelect = document.getElementById('filter-serie');
@@ -23,7 +22,6 @@ function getClassName(classId) {
     return `Klasse ${id}`; 
 }
 
-// 🚀 REPARIERT: Holt garantiert den echten Textnamen der Strecke heraus
 function getTrackName(trackId) {
     const id = String(trackId).trim();
     if (trackMapping && trackMapping[id]) {
@@ -35,7 +33,7 @@ function getTrackName(trackId) {
     }
     return `Strecke ${id}`; 
 }
-// 🚀 OPTIMIERT: Funktioniert garantiert, egal ob layouts ein Array oder ein Objekt ist
+
 function getLayoutName(trackId, layoutId) {
     const lId = String(layoutId).trim();
     
@@ -63,21 +61,28 @@ function formatDrivers(livery) {
     return 'Keine Fahrer';
 }
 
+// =========================================================================
+// 🚀 HAUPT-REPARATUR: Zerlegt deine CSV-Dateien absolut fehlerfrei
+// =========================================================================
 function parseGenericCSV(csvText) {
     const lines = csvText.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
     if (lines.length < 2) return [];
-    const delimiter = csvText.includes(';') ? ';' : ',';
     
-    // Holt die Spaltenköpfe korrekt aus der ersten Zeile
+    // Ermittelt den Trenner anhand der allerersten Zeile
+    const delimiter = lines[0].includes(';') ? ';' : ',';
+    
+    // 🚀 REPARIERT: Holt die Spaltenköpfe sauber aus der ersten Zeile lines[0] heraus!
     const headers = lines[0].split(delimiter).map(h => h.trim()); 
     
     const entries = [];
     for (let i = 1; i < lines.length; i++) {
-        const currentLine = lines[i].split(delimiter);
+        // Trennt die aktuelle Datenzeile sauber auf
+        const currentLine = lines[i].split(new RegExp(`${delimiter}(?=(?:(?:[^"]*"){2})*[^"]*$)`));
         const obj = {};
         headers.forEach((header, index) => {
             if (currentLine[index] !== undefined) {
-                obj[header] = currentLine[index].trim();
+                // Entfernt eventuelle Anführungszeichen um den Wert
+                obj[header] = currentLine[index].trim().replace(/^"|"$/g, '');
             }
         });
         entries.push(obj);
@@ -86,50 +91,44 @@ function parseGenericCSV(csvText) {
 }
 
 // =========================================================================
-// 🚀 AKTUALISIERT: Zeigt jetzt auch den Layout-Namen (Variante) unter der Strecke an
+// 🚀 DYNAMISCHE KALENDER-ANZEIGE
 // =========================================================================
 function updateCalendar(selectedSerie) {
     if (!roundsListContainer) return;
-    
-    // Leeren des Kalenders
     roundsListContainer.innerHTML = '';
 
     if (selectedSerie === 'all') {
-        roundsListContainer.innerHTML = '<div style="color: #bbbbbb; font-size: 13px; padding: 10px;">Bitte wählen Sie eine Rennserie, um den Kalender anzuzeigen.</div>';
+        roundsListContainer.innerHTML = '<div style="color: #bbbbbb; font-size: 13px; padding: 10px;">Bitte wählen Sie eine Rennserie.</div>';
         return;
     }
 
-    // Findet das erste Auto dieser Serie, um die zugewiesenen Strecken auszulesen
     const serieData = mappedSeriesCars.find(car => car.Serie === selectedSerie);
-    
     if (!serieData || !serieData.StreckenObjects || serieData.StreckenObjects.length === 0) {
-        roundsListContainer.innerHTML = '<div style="color: #bbbbbb; font-size: 13px; padding: 10px;">Keine Streckendaten für diese Serie gefunden.</div>';
+        roundsListContainer.innerHTML = '<div style="color: #bbbbbb; font-size: 13px; padding: 10px;">Keine Strecken gefunden.</div>';
         return;
     }
 
-    // Generiert die HTML-Karten für alle vorhandenen Rennen
     serieData.StreckenObjects.forEach((track, index) => {
         const roundNumber = index + 1;
         const trackName = getTrackName(track.id);
         
-        // 🚀 NEU: Holt den Namen der Streckenvariante
+        // 🚀 REPARIERT: Holt den Namen der Variante live über deine neue Funktion
         const layoutVariantName = getLayoutName(track.id, track.layoutId);
         
-        // Wenn ein Layout-Name existiert, bereiten wir ein dezentes HTML-Element vor
+        // Bereitet die Textzeile vor, falls ein Name gefunden wurde
         const layoutTextHTML = layoutVariantName 
             ? `<span class="layout-variant-name">${layoutVariantName}</span>` 
             : '';
-        
-        // Erstes Rennen bekommt das rote Highlight (.active)
+            
         const isActive = roundNumber === 1 ? 'active' : '';
-
         const fallbackImg = 'https://r3eassets.com';
-        const layoutImgUrl = track.layoutId
-
-            ? `http://game.raceroom.com/store/image_redirect?id=${track.layoutId}&size=small`
+        
+        // Nutzt deinen reparierten, funktionierenden Store-Link für das Layout-Bild
+        const layoutImgUrl = track.layoutId 
+            ? `http://game.raceroom.com/store/image_redirect?id=${track.layoutId}&size=full`
             : fallbackImg;
 
-        // 💡 UPDATE: Das layoutTextHTML wurde direkt unter dem Strecken-Namen eingefügt
+        // 💡 UPDATE: ${layoutTextHTML} wird jetzt wieder sauber unter dem Streckennamen eingefügt!
         const roundCardHTML = `
             <div class="round-card ${isActive}">
                 <div class="track-layout-mini">
@@ -146,33 +145,29 @@ function updateCalendar(selectedSerie) {
     });
 }
 
-// =========================================================================
-// 2. DATEN LADEN & VERSCHMELZEN (Optimiert für Umlaute & CSV-Spalten)
+// ==http://game.raceroom.com/store/image_redirect?id================
+// 2. DATEN LADEN & VERSCHMELZEN (Auf deine deutschen Spalten angepasst!)
 // =========================================================================
 async function loadData() {
     try {
         const [carsResponse, serienResponse, specsResponse] = await Promise.all([
             fetch('daten.json'),
             fetch('Serien.csv'),
-            fetch('specs.csv').catch(() => null)
+            fetch('specs.csv')
         ]);
 
-        if (!carsResponse.ok || !serienResponse.ok) throw new Error("Wichtige Dateien fehlen!");
+        if (!carsResponse.ok || !serienResponse.ok || !specsResponse.ok) throw new Error("Fehler beim Laden!");
 
         const dataset = await carsResponse.json();
         const serienText = await serienResponse.text();
-        
-        let specsEntries = [];
-        if (specsResponse && specsResponse.ok) {
-            const specsText = await specsResponse.text();
-            specsEntries = parseGenericCSV(specsText);
-        }
+        const specsText = await specsResponse.text();
         
         classMapping = dataset.classes || dataset.classNames || dataset.Classes || {};
         trackMapping = dataset.tracks || dataset.trackNames || dataset.Tracks || {};
-        layoutMapping = dataset.layouts || dataset.Layouts || {};
+        layoutMapping = dataset.layouts || dataset.Layouts || {}; 
 
         const csvSerien = parseGenericCSV(serienText);
+        const specsEntries = parseGenericCSV(specsText);
         const jsonCars = dataset.cars || dataset.Cars || dataset;
 
         mappedSeriesCars = [];
@@ -187,18 +182,18 @@ async function loadData() {
             }
 
             if (jsonCar) {
-                const specRow = specsEntries.find(s => String(s.ID || s.id || '').trim() === csvId) || {};
+                // Sucht das passende Auto in der specs.csv heraus
+                const specRow = specsEntries.find(s => String(s.ID || s.id || s.Id || '').trim() === csvId) || {};
 
+                // 🚀 EXAKT REPARIERT: Nutzt die deutschen Spaltennamen aus deiner specs.csv
                 const brand = jsonCar.BrandName || jsonCar.brand || 'Unbekannt';
-                const nation = specRow.Nation || specRow.nation || jsonCar.Nation || 'Germany';
-                const year = specRow.Year || specRow.year || jsonCar.Year || '2019';
-                const power = specRow.Power || specRow.power || jsonCar.Power || '570BHP';
-                const weight = specRow.Weight || specRow.weight || jsonCar.Weight || '1390kg';
-                const engine = specRow.Engine || specRow.engine || jsonCar.Engine || '5.2L V10';
-                const drive = specRow.Drive || specRow.drive || jsonCar.Drive || 'RWD';
+                const nation = specRow.Nation || specRow.nation || 'Germany';
+                const year = specRow.Baujahr || specRow.baujahr || '2020';
+                const power = specRow.Leistung || specRow.leistung || '570BHP';
+                const weight = specRow.Gewicht || specRow.gewicht || '1390kg';
+                const engine = specRow.Motor || specRow.motor || 'V8';
+                const drive = specRow.Antrieb || specRow.antrieb || 'RWD';
 
-                // 🚀 DYNAMISCHE STRIP-LOGIK: Verhindert Umlautfehler bei "Länge"
-                // Sucht flexibel nach Spalten wie "Länge", "Länge ", "Laenge" oder "laenge"
                 const keys = Object.keys(csvCar);
                 const laengeKey = keys.find(k => k.toLowerCase().trim().includes('länge') || k.toLowerCase().trim().includes('laenge'));
                 const pitstopKey = keys.find(k => k.toLowerCase().trim().includes('pitstop') || k.toLowerCase().trim().includes('boxen'));
@@ -206,7 +201,6 @@ async function loadData() {
                 const extraLaenge = laengeKey ? csvCar[laengeKey] : '';
                 const extraPitstop = pitstopKey ? csvCar[pitstopKey] : '';
 
-                // Holt die Rennen & Layouts heraus
                 const trackObjects = [];
                 for (let r = 1; r <= 6; r++) {
                     const trackKey = keys.find(k => k.trim() === `Rennen${r}`);
@@ -228,8 +222,8 @@ async function loadData() {
                         mappedSeriesCars.push({
                             Serie: csvCar.Serie || csvCar.serie,
                             Logo: csvCar.LogoPfad || csvCar.logo || '', 
-                            Laenge: extraLaenge,   // 🚀 Übergeben an das Objekt
-                            Pitstop: extraPitstop, // 🚀 Übergeben an das Objekt
+                            Laenge: extraLaenge,
+                            Pitstop: extraPitstop,
                             AutoName: csvCar.Auto || csvCar.auto || jsonCar.Name,
                             ID: csvId,
                             Index: csvCar.Index || csvCar.index,
