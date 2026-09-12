@@ -213,8 +213,8 @@ select:disabled {
 /* 💡 BILD-CONTAINER VERGRÖSSERT: Nimmt jetzt die volle Breite (100%) und mehr Höhe ein */
 .track-layout-mini {
     width: 100%;
-    height: 120px; /* Von 40px auf 90px erhöht für eine markante Anzeige */
-    background: #111111;
+    height: 120px;
+    /* background: #111111; <-- Diese Zeile einfach LÖSCHEN, da JavaScript das Bild jetzt reinlädt */
     border-radius: 4px;
     display: flex;
     justify-content: center;

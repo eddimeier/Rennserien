@@ -3,7 +3,8 @@
 // =========================================================================
 let mappedSeriesCars = []; 
 let classMapping = {}; 
-let trackMapping = {}; 
+let trackMapping = {};
+let layoutMapping = {}; 
 
 const carContainer = document.getElementById('car-container');
 const serieSelect = document.getElementById('filter-serie');
@@ -92,6 +93,7 @@ function parseGenericCSV(csvText) {
 
 // =========================================================================
 // 🚀 DYNAMISCHE KALENDER-ANZEIGE
+// 🚀 REPARIERT: Lädt das Streckenfoto aus RennenX als echten Kachel-Hintergrund
 // =========================================================================
 function updateCalendar(selectedSerie) {
     if (!roundsListContainer) return;
@@ -104,18 +106,15 @@ function updateCalendar(selectedSerie) {
 
     const serieData = mappedSeriesCars.find(car => car.Serie === selectedSerie);
     if (!serieData || !serieData.StreckenObjects || serieData.StreckenObjects.length === 0) {
-        roundsListContainer.innerHTML = '<div style="color: #bbbbbb; font-size: 13px; padding: 10px;">Keine Strecken gefunden.</div>';
+        roundsListContainer.innerHTML = '<div style="color: #64748b; font-size: 13px; padding: 10px;">Keine Strecken gefunden.</div>';
         return;
     }
 
     serieData.StreckenObjects.forEach((track, index) => {
         const roundNumber = index + 1;
         const trackName = getTrackName(track.id);
-        
-        // 🚀 REPARIERT: Holt den Namen der Variante live über deine neue Funktion
         const layoutVariantName = getLayoutName(track.id, track.layoutId);
         
-        // Bereitet die Textzeile vor, falls ein Name gefunden wurde
         const layoutTextHTML = layoutVariantName 
             ? `<span class="layout-variant-name">${layoutVariantName}</span>` 
             : '';
@@ -123,15 +122,21 @@ function updateCalendar(selectedSerie) {
         const isActive = roundNumber === 1 ? 'active' : '';
         const fallbackImg = 'https://r3eassets.com';
         
-        // Nutzt deinen reparierten, funktionierenden Store-Link für das Layout-Bild
+        // 1. Das weiße Strecken-Layout (Vordergrund) aus der Layout-Spalte
         const layoutImgUrl = track.layoutId 
             ? `http://game.raceroom.com/store/image_redirect?id=${track.layoutId}&size=full`
             : fallbackImg;
 
-        // 💡 UPDATE: ${layoutTextHTML} wird jetzt wieder sauber unter dem Streckennamen eingefügt!
+        // 🚀 2. Das atmosphärische Foto (Hintergrund) aus deiner RennenX-Spalte (track.id)
+        // Nutzt einen edlen, abdunkelnden linearen Farbverlauf, damit die weiße Linie perfekt lesbar bleibt
+        const backgroundStyle = track.id 
+            ? `background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('http://game.raceroom.com/store/image_redirect?id=${track.id}&size=full'); background-size: cover; background-position: center;`
+            : 'background: #111111;';
+
+        // 💡 UPDATE: style="${backgroundStyle}" injiziert das Foto direkt in den .track-layout-mini Kasten
         const roundCardHTML = `
             <div class="round-card ${isActive}">
-                <div class="track-layout-mini">
+                <div class="track-layout-mini" style="${backgroundStyle}">
                     <img src="${layoutImgUrl}" alt="${trackName}" onerror="this.src='${fallbackImg}';">
                 </div>
                 <div class="round-info">
@@ -185,7 +190,7 @@ async function loadData() {
                 // Sucht das passende Auto in der specs.csv heraus
                 const specRow = specsEntries.find(s => String(s.ID || s.id || s.Id || '').trim() === csvId) || {};
 
-                // 🚀 EXAKT REPARIERT: Nutzt die deutschen Spaltennamen aus deiner specs.csv
+                // Mappt die deutschen Spaltennamen aus deiner specs.csv
                 const brand = jsonCar.BrandName || jsonCar.brand || 'Unbekannt';
                 const nation = specRow.Nation || specRow.nation || 'Germany';
                 const year = specRow.Baujahr || specRow.baujahr || '2020';
@@ -267,7 +272,6 @@ async function loadData() {
         console.error("Datenfehler beim Laden:", error);
     }
 }
-
 // Teil2====================================================================
 // 3. FILTER OPTIONEN DYNAMISCH BEFÜLLEN
 // =========================================================================
