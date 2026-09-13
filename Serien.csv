@@ -107,44 +107,44 @@ Cup_Tourenwagen_Trophy,Porsche Cayman GT4 Clubsport,6568,180,6648,logos/CTT.png,
 Cup_Tourenwagen_Trophy,Audi TT cup 2015,4681,189,4680,logos/CTT.png,1692,1693,9984,9985,1690,2011,1683,1684,13255,13368,1690,1691,25 min,non,
 Cup_Tourenwagen_Trophy,BMW M235i Racing,6262,201,6344,logos/CTT.png,1692,1693,9984,9985,1690,2011,1683,1684,13255,13368,1690,1691,25 min,non,
 Cup_Tourenwagen_Trophy,Mazda MX-5 CUP 2019 ND2,10914,203,10977,logos/CTT.png,1692,1693,9984,9985,1690,2011,1683,1684,13255,13368,1690,1691,25 min,non,
-PorscheClubHistoric_Challenge,RUF RT12R,1837,75,1704,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-PorscheClubHistoric_Challenge,Porsche Cayman GT4 Clubsport,6568,180,6648,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-PorscheClubHistoric_Challenge,Porsche 911 GT3 Cup (991.2) Endurance,4675,105,6345,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-PorscheClubHistoric_Challenge,Porsche 911 GT3 Cup (992) Endurance,12012,104,12302,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-PorscheClubHistoric_Challenge,Porsche 911 Carrera Cup (964),7396,205,7287,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-PorscheClubHistoric_Challenge,Porsche 944 Turbo Cup,11561,209,11564,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-PorscheClubHistoric_Challenge,Porsche 911 GT3 R,6349,80,1703,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-PorscheClubHistoric_Challenge,Porsche 911 GT3 R (2019),8257,80,1703,logos/PCHC.jpg,1692,,12505,,1690,,1683,,9984,,,,2x 30 min,non,
-TCO,Ford Mustang GT3,1782,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Alfa Romeo Giulietta TCR,7029,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Audi R8 LMS Ultra,2037,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Audi RS 3 LMS,7011,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Bentley Continental GT3,5170,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,BMW M4 GT4 (F82),8053,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,BMW Z4 GT3,1738,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Chevrolet Camaro GT3,2338,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Chevrolet Camaro GT3,2338,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Chevrolet Corvette Z06.R GT3,3626,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,CUPRA TCR,7005,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Ford GT GT3,3754,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Honda Civic TCR,7125,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Hyundai i30 N TCR,7117,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,KTM X-Bow GT4,5767,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,KTM X-Bow RR,5342,130,5385,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Audi TT RS VLN,4299,140,5234,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,McLaren MP4-12C GT3,1909,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Mercedes-Benz SLS AMG GT3,2533,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Nissan GT-R GT3,1811,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Nissan GT-R GT3,1811,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Opel Astra,8149,160,8660,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,P4-5 Competizione GT3,1821,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Peugeot 308 TCR,7036,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Porsche 911 GT3 Cup (991.2) Endurance,4675,105,6345,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Porsche 911 GT3 R,6349,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Porsche Cayman GT4 CS MR,6623,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,RUF RT12R GTR3,3516,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,Volkswagen Golf GTI TCR,7105,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
-TCO,BMW Alpina B6 GT3,1695,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
+PorscheClubHistoric_Challenge,RUF RT12R,1837,75,1704,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+PorscheClubHistoric_Challenge,Porsche Cayman GT4 Clubsport,6568,180,6648,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+PorscheClubHistoric_Challenge,Porsche 911 GT3 Cup (991.2) Endurance,4675,105,6345,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+PorscheClubHistoric_Challenge,Porsche 911 GT3 Cup (992) Endurance,12012,104,12302,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+PorscheClubHistoric_Challenge,Porsche 911 Carrera Cup (964),7396,205,7287,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+PorscheClubHistoric_Challenge,Porsche 944 Turbo Cup,11561,209,11564,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+PorscheClubHistoric_Challenge,Porsche 911 GT3 R,6349,80,1703,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+PorscheClubHistoric_Challenge,Porsche 911 GT3 R (2019),8257,80,1703,logos/PCHC.jpeg,1692,1693,12505,12506,1690,2010,1683,1684,9984,9985,1690,1691,2x 30 min,non,https://cms.porsche-clubs.com/PorscheClubs/pc_deutschland/pc_main.nsf/web/EEAA5640EBDA67F7C1258E3B0040AEE4
+TCO,Ford Mustang GT3,1782,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Alfa Romeo Giulietta TCR,7029,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Audi R8 LMS Ultra,2037,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Audi RS 3 LMS,7011,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Bentley Continental GT3,5170,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,BMW M4 GT4 (F82),8053,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,BMW Z4 GT3,1738,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Chevrolet Camaro GT3,2338,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Chevrolet Camaro GT3,2338,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Chevrolet Corvette Z06.R GT3,3626,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,CUPRA TCR,7005,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Ford GT GT3,3754,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Honda Civic TCR,7125,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Hyundai i30 N TCR,7117,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,KTM X-Bow GT4,5767,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,KTM X-Bow RR,5342,130,5385,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Audi TT RS VLN,4299,140,5234,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,McLaren MP4-12C GT3,1909,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Mercedes-Benz SLS AMG GT3,2533,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Nissan GT-R GT3,1811,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Nissan GT-R GT3,1811,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Opel Astra,8149,160,8660,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,P4-5 Competizione GT3,1821,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Peugeot 308 TCR,7036,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Porsche 911 GT3 Cup (991.2) Endurance,4675,105,6345,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Porsche 911 GT3 R,6349,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Porsche Cayman GT4 CS MR,6623,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,RUF RT12R GTR3,3516,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,Volkswagen Golf GTI TCR,7105,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
+TCO,BMW Alpina B6 GT3,1695,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,https://www.histocup.com/renntermine/
 Lurani_Trophy,Crosslé 90F,10896,207,10899,logos/LunariTrophy.jpg,1692,1693,1690,1691,10903,10904,1849,1850,,,,,2x 25 min,non,
 DHLM,Alfa Romeo 156 Super Touring,13049,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
 DHLM,Audi A4 Super Touring 1995,12561,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
@@ -257,13 +257,13 @@ Imsa Sportscar Challenge,McLaren 570s GT4,10744,165,5825,logos/ImsaSCC.jpg,8366,
 Imsa Sportscar Challenge,Mercedes AMG GT4 2020,9644,165,5825,logos/ImsaSCC.jpg,8366,8367,9176,9324,1855,1856,1673,1674,5275,5276,9942,9943,80 min,free,
 Imsa Sportscar Challenge,Porsche 718 Cayman GT4 Clubsport,8201,165,5825,logos/ImsaSCC.jpg,8366,8367,9176,9324,1855,1856,1673,1674,5275,5276,9942,9943,80 min,free,
 Imsa Sportscar Challenge,Mistral M531,1803,35,1923,logos/ImsaSCC.jpg,8366,8367,9176,9324,1855,1856,1673,1674,5275,5276,9942,9943,80 min,free,
-Anhang K bis einschliesslich 1990,BMW 635 CSI,1862,205,1712,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
-Anhang K bis einschliesslich 1990,Nissan Skyline GTR R32 Group N,3964,205,1712,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
-Anhang K bis einschliesslich 1990,Volvo 240 Turbo,2275,205,1712,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
-Anhang K bis einschliesslich 1990,Porsche 911 Carrera Cup (964),7396,205,7287,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
-Anhang K bis einschliesslich 1990,Porsche 944 Turbo Cup,11561,209,11564,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
-Anhang K bis einschliesslich 1990,Volkswagen Scirocco Gr2,8498,212,8483,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
-Anhang K bis einschliesslich 1990,NSU TTS,4810,215,4813,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
+Anhang K bis einschliesslich 1990,BMW 635 CSI,1862,205,1712,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,https://www.histocup.com/renntermine/
+Anhang K bis einschliesslich 1990,Nissan Skyline GTR R32 Group N,3964,205,1712,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,https://www.histocup.com/renntermine/
+Anhang K bis einschliesslich 1990,Volvo 240 Turbo,2275,205,1712,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,https://www.histocup.com/renntermine/
+Anhang K bis einschliesslich 1990,Porsche 911 Carrera Cup (964),7396,205,7287,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,https://www.histocup.com/renntermine/
+Anhang K bis einschliesslich 1990,Porsche 944 Turbo Cup,11561,209,11564,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,https://www.histocup.com/renntermine/
+Anhang K bis einschliesslich 1990,Volkswagen Scirocco Gr2,8498,212,8483,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,https://www.histocup.com/renntermine/
+Anhang K bis einschliesslich 1990,NSU TTS,4810,215,4813,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,https://www.histocup.com/renntermine/
 Daytona 24h,Mistral M530,1800,25,1714,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
 Daytona 24h,Audi R8 LMS GT3 EVO II,12319,80,12770,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
 Daytona 24h,BMW M4 GT3,11536,80,12770,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
@@ -326,3 +326,48 @@ GT Cup Series,Audi R8 LMS GT3 EVO,8604,80,1703,logos/GT-Cup-Series.png,2521,2556
 GT Cup Series,DMD P21,1759,35,1923,logos/GT-Cup-Series.png,2521,2556,2029,2064,7111,7112,2029,2064,5297,5298,1692,1693,60 min,mandatory,https://www.gtcupseries.com/2026-2/
 GT Cup Series,BMW M8 GTE,12430,66,8600,logos/GT-Cup-Series.png,2521,2556,2029,2064,7111,7112,2029,2064,5297,5298,1692,1693,60 min,mandatory,https://www.gtcupseries.com/2026-2/
 GT Cup Series,Porsche 911 RSR 2019,8487,66,8600,logos/GT-Cup-Series.png,2521,2556,2029,2064,7111,7112,2029,2064,5297,5298,1692,1693,60 min,mandatory,https://www.gtcupseries.com/2026-2/
+Youngtimer Touring Car Challenge,BMW 320 Turbo,1700,100,1708,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Chevrolet Corvette Greenwood 1977,4075,100,1708,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Chevrolet Dekon Monza,4145,100,1708,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Fabcar 935,2859,100,1708,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Nissan Silvia Turbo,1815,100,1708,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Nissan Skyline 2000RS,1818,100,1708,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Zakspeed Capri,2044,100,1708,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Audi 90 Quattro,2405,70,1713,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Ford Mustang IMSA GTO,4386,70,1713,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Nissan 300ZX Z32,2868,70,1713,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,BMW M1 Gr. 4,7805,199,7304,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Porsche 934 Turbo RSR,7282,199,7304,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Nissan Skyline GTR R32 Group N,3964,205,1712,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Volvo 240 Turbo,2275,205,1712,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,BMW 635 CSI,1862,205,1712,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,NSU TTS,4810,215,4813,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Porsche 911 Carrera Cup (964),7396,205,7287,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Volkswagen Scirocco Gr2,8498,212,8483,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+Youngtimer Touring Car Challenge,Porsche 944 Turbo Cup,11561,209,11564,logos/YTCC.jpg,1683,1684,9984,9985,1690,1691,2521,2556,10903,10904,13255,13368,25 min,non,https://www.ytcc.nl/
+World_Racing_League,Aquila CR1 Sports GT,252,150,255,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Audi R8 LMS GT4 2020,8900,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,BMW M4 GT4 (F82),8053,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,BMW M4 GT4 (G82),12509,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,KTM X-Bow GT4,5767,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Lotus Evora GT4,7162,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,McLaren 570s GT4,10744,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Mercedes AMG GT4 2020,9644,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,McLaren 570s GT4,10744,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Mercedes AMG GT4 2020,9644,165,5825,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Audi TT cup 2016,5588,189,5726,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,BMW M235i Racing,6262,201,6344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Mazda MX-5 CUP 2019 ND2,10914,203,10977,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Alfa Romeo Giulietta TCR,7029,160,7009,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Audi RS 3 LMS,7011,160,7009,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,CUPRA TCR,7005,160,7009,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Honda Civic TCR,7125,160,7009,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Hyundai i30 N TCR,7117,160,7009,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Peugeot 308 TCR,7036,160,7009,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Volkswagen Golf GTI TCR,7105,160,7009,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Audi RS 3 LMS 2021,11917,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,CUPRA Leon Competición,8726,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Honda Civic TCR,7125,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Hyundai Elantra TCR 2021,10397,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Lada Vesta TCR,10674,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
+World_Racing_League,Lynk & Co 03 TCR,7926,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
