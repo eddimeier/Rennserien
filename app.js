@@ -153,6 +153,142 @@ function updateCalendar(selectedSerie) {
 // ==http://game.raceroom.com/store/image_redirect?id================
 // 2. DATEN LADEN & VERSCHMELZEN (Auf deine deutschen Spalten angepasst!)
 // =========================================================================
+
+// Funktion zum Laden der Fahrer-Stammdaten aus der ID.json
+async function loadDriverProfile() {
+    const jsonPath = 'Fahrer/ID.json'; 
+
+    try {
+        const response = await fetch(jsonPath);
+        if (!response.ok) {
+            throw new Error(`Fehler beim Laden der JSON: ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        const cSection = data.context?.c;
+        const profileData = cSection?.overview;
+        
+        if (cSection && profileData) {
+            const name = profileData.name || "Unbekannter Fahrer";
+            const avatarUrl = profileData.avatar;
+            const team = profileData.team;
+            const rank = cSection.competition_rank;
+            const userId = cSection.user_id;
+
+            // Nation und Flaggen-Code auslesen
+            const countryName = profileData.country?.name; // "Austria"
+            const countryCode = profileData.country?.code; // "at"
+
+            // Gezielte Suche innerhalb der Info-Box
+            const infoBox = document.getElementById('driver-info-box');
+            
+            if (infoBox) {
+                const nameElement = infoBox.querySelector('#driver-name');
+                const avatarElement = infoBox.querySelector('#driver-avatar');
+
+                if (nameElement) nameElement.textContent = name;
+                if (avatarElement && avatarUrl) {
+                    avatarElement.src = avatarUrl;
+                    avatarElement.style.display = 'inline-block';
+                }
+            }
+
+		// 1. Avatar auf der Lizenzkarte befüllen
+            if (avatarUrl) {
+                const licenseAvatar = document.getElementById('license-avatar');
+                if (licenseAvatar) {
+                    licenseAvatar.src = avatarUrl;
+                    licenseAvatar.style.display = 'block'; 
+                }
+            }
+
+            // 2. User ID auf der Lizenzkarte befüllen
+            if (userId) {
+                const licenseNumber = document.getElementById('license-number-text');
+                if (licenseNumber) {
+                    licenseNumber.textContent = userId;
+                }
+            }
+
+            // 3. Namen aufteilen und auf der Lizenzkarte befüllen
+            if (name) {
+                // Teilt "Laurenz Sagmeister" am Leerzeichen auf
+                const namensTeile = name.split(' '); 
+                const vorname = namensTeile[0] || "";
+                const nachname = namensTeile.slice(1).join(' ') || ""; // Falls es ein Doppelname ist
+
+                const lastnameEl = document.getElementById('license-lastname-text');
+                const firstnameEl = document.getElementById('license-firstname-text');
+
+                if (lastnameEl) lastnameEl.textContent = nachname.toUpperCase(); // Macht den Nachnamen komplett groß
+                if (firstnameEl) firstnameEl.textContent = vorname;
+            }
+
+            // 4. First Login (Oldest Entry) auslesen und eintragen
+            const oldestEntry = profileData.statistics?.leaderboards?.[2]?.value; // Holt "25-11-2018 17:26"
+            if (oldestEntry) {
+                const loginEl = document.getElementById('license-login-text');
+                if (loginEl) {
+                    // Schneidet nur das Datum aus (die ersten 10 Zeichen: "25-11-2018")
+                    loginEl.textContent = oldestEntry.substring(0, 10); 
+                }
+            }
+
+	    // Variable für den Flaggen-Dateinamen erstellen (z.B. "at.png")
+            var dateiName = countryCode ? countryCode.toLowerCase() + ".png" : "";
+
+            // 5. Landesflagge auf der Lizenzkarte austauschen
+            if (countryCode && dateiName) {
+                const licenseFlag = document.getElementById('license-country-flag');
+                if (licenseFlag) {
+                    // Nutzt jetzt die funktionierende Flagpedia-URL
+                    licenseFlag.src = "https://flagpedia.net/data/flags/w1600/" + dateiName;
+                    licenseFlag.style.display = "block"; // Macht das Bild sichtbar
+                }
+            }
+
+	    // NEU: 6. Competition Rank auf der Lizenzkarte einblenden
+            if (rank) {
+                const licenseRank = document.getElementById('license-rank-text');
+                if (licenseRank) {
+                    licenseRank.textContent = rank; // Setzt das "B" ein
+                }
+            }
+
+            // Restliche Meta-Daten befüllen
+            const teamElement = document.getElementById('info-team');
+            const rankElement = document.getElementById('info-rank');
+            const userIdElement = document.getElementById('info-userid');
+            const countryNameElement = document.getElementById('country-name');
+            const flagElement = document.getElementById('country-flag');
+
+            if (teamElement && team) teamElement.textContent = team;
+            if (rankElement && rank) rankElement.textContent = rank;
+            if (userIdElement && userId) userIdElement.textContent = userId;
+            
+            // Nation & obere Flagge setzen
+            if (countryNameElement && countryName) {
+                countryNameElement.textContent = countryName;
+            }
+
+            if (flagElement && countryCode && dateiName) {
+                // Obere Flagge befüllen
+                flagElement.src = "https://flagpedia.net/data/flags/w1600/" + dateiName;
+                flagElement.style.display = "inline-block";
+            
+}
+        }
+    } catch (error) {
+        console.error("Das Fahrerprofil konnte nicht geladen werden:", error);
+    }
+}
+// Automatisch beim Laden der Seite ausführen
+document.addEventListener('DOMContentLoaded', () => {
+    loadDriverProfile();
+    // Hier stehen vermutlich deine anderen Initialisierungen (z.B. LadeSerien();)
+});
+
+
 async function loadData() {
     try {
         const [carsResponse, serienResponse, specsResponse] = await Promise.all([

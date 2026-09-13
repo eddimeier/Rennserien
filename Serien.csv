@@ -146,24 +146,24 @@ TCO,RUF RT12R GTR3,3516,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2
 TCO,Volkswagen Golf GTI TCR,7105,160,7009,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
 TCO,BMW Alpina B6 GT3,1695,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,60 min,mandatory,
 Lurani_Trophy,Crosslé 90F,10896,207,10899,logos/LunariTrophy.jpg,1692,1693,1690,1691,10903,10904,1849,1850,,,,,2x 25 min,non,
-DHLM,Alfa Romeo 156 Super Touring,13049,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Audi A4 Super Touring 1995,12561,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,BMW 320i E36 Super Touring,12556,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Honda Accord Super Touring,8645,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Opel Vectra Super Touring,13065,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Renault Laguna Super Touring,13183,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Volvo 850 Super Touring,12652,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Volvo S40 Super Touring,12829,161,1710,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,BMW M1 Gr. 4,7805,199,7304,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Porsche 934 Turbo RSR,7282,199,7304,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,BMW 635 CSI,1862,205,1712,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,BMW M3 E30 Gr.A,2116,205,1712,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Nissan Skyline GTR R32 Group N,3964,205,1712,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Volvo 240 Turbo,2275,205,1712,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Porsche 911 Carrera Cup (964),7396,205,1712,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Porsche 944 Turbo Cup,11561,209,11564,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,Volkswagen Scirocco Gr2,8498,212,8483,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
-DHLM,NSU TTS,4810,215,4813,logos/DHLM.jpg,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Alfa Romeo 156 Super Touring,13049,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Audi A4 Super Touring 1995,12561,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,BMW 320i E36 Super Touring,12556,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Honda Accord Super Touring,8645,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Opel Vectra Super Touring,13065,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Renault Laguna Super Touring,13183,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Volvo 850 Super Touring,12652,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Volvo S40 Super Touring,12829,161,1710,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,BMW M1 Gr. 4,7805,199,7304,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Porsche 934 Turbo RSR,7282,199,7304,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,BMW 635 CSI,1862,205,1712,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,BMW M3 E30 Gr.A,2116,205,1712,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Nissan Skyline GTR R32 Group N,3964,205,1712,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Volvo 240 Turbo,2275,205,1712,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Porsche 911 Carrera Cup (964),7396,205,1712,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Porsche 944 Turbo Cup,11561,209,11564,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,Volkswagen Scirocco Gr2,8498,212,8483,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
+DHLM,NSU TTS,4810,215,4813,logos/DHLM.png,2812,4975,2812,5095,2812,5095,2812,4975,,,,,90 min,free,
 GT_Masters,Aston Martin Vantage AMR GT3 EVO DTM,13603,80,13571,logos/ADACGTMasters.png,2521,2556,10781,10782,2467,2468,1690,2011,2020,2026,1692,1693,60 min,mandatory,
 GT_Masters,BMW M4 GT3 EVO DTM,13617,80,13571,logos/ADACGTMasters.png,2521,2556,10781,10782,2467,2468,1690,2011,2020,2026,1692,1693,60 min,mandatory,
 GT_Masters,Ford Mustang GT3 EVO DTM,13591,80,13571,logos/ADACGTMasters.png,2521,2556,10781,10782,2467,2468,1690,2011,2020,2026,1692,1693,60 min,mandatory,
@@ -264,18 +264,18 @@ Anhang K bis einschliesslich 1990,Porsche 911 Carrera Cup (964),7396,205,7287,lo
 Anhang K bis einschliesslich 1990,Porsche 944 Turbo Cup,11561,209,11564,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
 Anhang K bis einschliesslich 1990,Volkswagen Scirocco Gr2,8498,212,8483,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
 Anhang K bis einschliesslich 1990,NSU TTS,4810,215,4813,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,2x 25 min,non,
-Daytona 24h,Mistral M530,1800,25,1714,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,Audi R8 LMS GT3 EVO II,12319,80,12770,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,BMW M4 GT3,11536,80,12770,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,Ferrari 296 GT3,12405,80,12770,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,Lamborghini Huracán GT3 EVO II,12771,80,13136,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,McLaren 720S GT3 EVO DTM,12815,80,13136,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,Mercedes-AMG GT3 2020,9603,80,13136,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,Porsche 911 GT3 R (992),12090,80,13136,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,BMW M4 GT3 EVO DTM,13172,80,13136,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,BMW M Hybrid V8,13126,29,13129,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,Lamborghini SC63,13137,29,13129,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
-Daytona 24h,Porsche 963,13169,29,13129,,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Mistral M530,1800,25,1714,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Audi R8 LMS GT3 EVO II,12319,80,12770,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,BMW M4 GT3,11536,80,12770,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Ferrari 296 GT3,12405,80,12770,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Lamborghini Huracán GT3 EVO II,12771,80,13136,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,McLaren 720S GT3 EVO DTM,12815,80,13136,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Mercedes-AMG GT3 2020,9603,80,13136,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Porsche 911 GT3 R (992),12090,80,13136,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,BMW M4 GT3 EVO DTM,13172,80,13136,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,BMW M Hybrid V8,13126,29,13129,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Lamborghini SC63,13137,29,13129,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
+Daytona 24h,Porsche 963,13169,29,13129,logos/Daytona24h.png,8366,8367,,,,,,,,,,,244 min,free,https://www.imsa.com/vpracingsportscarchallenge/
 BRSCC Super Sports Cup,Chevrolet RML Cruze TC1 2016,6011,120,6036,logos/SuperSportEC.jpg,2519,2520,4038,5817,10393,10725,2519,2520,4038,5817,10393,10725,120 min,free,https://brscc.co.uk/formulae/pbs-brakes-supersport-endurance-cup/
 BRSCC Super Sports Cup,Citroën C-Elysée WTCC,3899,120,6036,logos/SuperSportEC.jpg,2519,2520,4038,5817,10393,10725,2519,2520,4038,5817,10393,10725,120 min,free,https://brscc.co.uk/formulae/pbs-brakes-supersport-endurance-cup/
 BRSCC Super Sports Cup,Honda Civic WTCC 2016,6024,120,6036,logos/SuperSportEC.jpg,2519,2520,4038,5817,10393,10725,2519,2520,4038,5817,10393,10725,120 min,free,https://brscc.co.uk/formulae/pbs-brakes-supersport-endurance-cup/

@@ -10,21 +10,50 @@
 <body>
 
     
-<h1>    🏎️ Laurenz</h1>
-
     <!-- HAUPT-LAYOUT CONTAINER -->
     <div class="layout-container">
         
         <!-- LINKE SPALTE: LOGO UND DROPDOWNS -->
         <aside class="left-sidebar">
+
+<!-- Überarbeitete Fahrerkarte in der Sidebar -->
+<div id="driver-info-box" class="driver-meta-info">
+    <div class="driver-profile-top">
+        <img id="driver-avatar" src="" alt="Avatar" style="display: none;">
+        <h2 id="driver-name">Wird geladen...</h2>
+    </div>
+    <hr class="profile-divider">
+    
+    <div class="driver-meta-item">
+        <span class="meta-label">👤 Team:</span>
+        <span id="info-team" class="meta-value">-</span>
+    </div>
+    <div class="driver-meta-item">
+        <span class="meta-label">🎖️ Rank:</span>
+        <span id="info-rank" class="meta-value">-</span>
+    </div>
+    <div class="driver-meta-item">
+        <span class="meta-label">🆔 User ID:</span>
+        <span id="info-userid" class="meta-value">-</span>
+    </div>
+    <div class="driver-meta-item">
+        <span class="meta-label">🌐 Nation:</span>
+        <span id="info-nation" class="meta-value">
+            <img id="country-flag" src="" alt="Flagge" style="display: none; width: 18px; height: auto; border-radius: 2px; vertical-align: middle; margin-right: 6px;">
+            <span id="country-name">-</span>
+        </span>
+    </div>
+</div>
+
+
     <div class="logo-container">
         <img id="serien-logo" src="" alt="Serien-Logo" style="display: none;">
     </div>
     
     <!-- 🚀 NEU: Box für Rennlänge und Pitstop direkt unter dem Logo -->
     <div id="series-meta-box" class="series-extra-info" style="display: none;">
-        <div class="meta-item">⏱️ <strong>Länge:</strong> <span id="info-laenge">-</span></div>
-        <div class="meta-item">🔧 <strong>Pitstop:</strong> <span id="info-pitstop">-</span></div>
+        <div class="meta-item">🏁 <strong>Länge:</strong> <span id="info-laenge">-</span></div>
+        <div class="meta-item">⛽ <strong>Pitstop:</strong> <span id="info-pitstop">-</span></div>
     </div>
     
    
@@ -32,7 +61,7 @@
             <div class="filter-group">
                 <label for="filter-serie">Rennserie</label>
                 <select id="filter-serie">
-                    <option value="all">Bitte Serie wählen</option>
+                    <option value="all">Alle Serien</option>
                 </select>
             </div>
             
@@ -56,9 +85,25 @@
                     <option value="all">Alle Strecken</option>
                 </select>
             </div>
-<div class="sidebar-license-box" style="margin-top: 20px; text-align: center;">
-                <img src="Fahrer/DriverID.png" alt="Fahrerlizenz" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); border: 1px solid #444; object-fit: contain;">
-            </div>
+
+
+<div class="sidebar-license-box">
+    <div class="license-wrapper">
+        <img src="Fahrer/DriverID.png" alt="Fahrerlizenz" class="license-card-img">
+        <img id="license-avatar" src="" alt="Fahrer Foto" style="display: none;">
+        <span id="license-number-text">-</span>
+        
+        <!-- Die drei Textzeilen auf der linken Kartenseite -->
+        <span id="license-lastname-text" class="license-field">-</span>
+        <span id="license-firstname-text" class="license-field">-</span>
+        <span id="license-login-text" class="license-field">-</span>
+	<!-- NEU: Dynamische Landesflagge über der aufgedruckten Flagge -->
+        <img id="license-country-flag" src="" alt="Landesflagge" style="display: none;">
+	<span id="license-rank-text">-</span>
+
+    </div>
+</div>
+
         </aside>
 
 

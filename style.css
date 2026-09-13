@@ -306,3 +306,218 @@ select:disabled {
     height: auto;
     object-fit: contain;
 }
+
+.driver-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#driver-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Macht das quadratische Bild perfekt rund */
+    border: 2px solid #ff5722; /* Optionaler farbiger Rahmen (z.B. passend zum SimRacing-Design) */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+}
+
+#driver-name {
+    margin: 0;
+    font-size: 2rem;
+}
+/* Styling für die Fahrer-Zusatzinfos in der Sidebar */
+.driver-meta-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Oberer Bereich mit Bild und Name nebeneinander */
+.driver-profile-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#driver-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #ff5722; /* Schicker Kontrast-Rahmen */
+    object-fit: cover;
+}
+
+#driver-name {
+    font-size: 1.15rem;
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Eine feine Trennlinie in der Box */
+.profile-divider {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 12px 0;
+}
+
+.driver-meta-item {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #eee;
+    display: flex !important;
+    justify-content: flex-start !important; /* Zwingt die Werte nach links! */
+    align-items: center;
+}
+
+.driver-meta-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Feste Breite für die Beschriftung sorgt für perfekte Linksbündigkeit */
+.meta-label {
+    color: #aaa;
+    width: 95px !important; /* Bestimmt den Abstand nach links */
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Die Werte direkt rechts daneben */
+.meta-value {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+/* Zwingt die Flagge auf die richtige Größe */
+#country-flag {
+    width: 20px !important;
+    height: 13px !important;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 8px;
+    display: inline-block !important;
+}
+
+#info-rank {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#info-userid {
+    color: #ffffff;
+}
+
+/* Begrenzt die Karte, damit sie in der Sidebar kompakt bleibt */
+.sidebar-license-box {
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+    max-width: 290px; /* Hier kannst du die Breite anpassen (z.B. 260px), falls sie noch zu groß ist */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.license-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    container-type: inline-size; /* Erlaubt die Nutzung von cqw für Schriftgrößen */
+}
+
+/* Die exakte, zoomsichere Positionierung des Ranks im freien Feld */
+#license-rank-text {
+    position: absolute;
+    top: 21.7%;         /* 💡 Feinjustierung nach oben/unten (Orientierung von oben) */
+    left: 42.0%;        /* 💡 Feinjustierung nach links/rechts */
+    
+    color: #000000;     /* Schwarz wie die restliche Schrift */
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 3.6cqw;  /* 💡 Skaliert die Schriftgröße perfekt mit der Kartengröße mit! */
+    font-weight: bold;
+    text-align: left;
+    line-height: 0 !important;
+    display: inline-block;
+}
+/* Sorgt dafür, dass die Karte nicht über die Box hinauswächst */
+.license-card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+    display: block;
+}
+
+/* Positioniert das Profilbild exakt über dem weißen Fotofeld */
+#license-avatar {
+    position: absolute;
+    top: 25.6%;      /* Abstand von oben in Prozent */
+    right: 7.9%;     /* Abstand von rechts in Prozent */
+    width: 19.5%;    /* Breite des Avatars */
+    height: 35.0%;   /* Höhe des Avatars */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Positioniert die User ID genau unter dem Avatar-Kasten */
+#license-number-text {
+    position: absolute;
+    bottom: 27.5%;     /* Abstand von unten – schiebt den Text hoch/runter */
+    right: 8.3%;      /* Richtet den Text bündig mit der rechten Kante des Helms aus */
+    width: 19.5%;      /* Nutzt die exakt gleiche Breite wie der Helm */
+    
+    color: #000000;    
+    font-family: Century Gothic;
+    font-size: 0.45rem; 
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================================
+   NEU: Gemeinsame Schrift-Formatierung für alle Textfelder auf der Lizenz 
+   ========================================================================= */
+.license-field {
+    position: absolute;
+    left: 28.0%;       /* Perfekter Abstand nach rechts hinter die Doppelpunkte */
+    color: #111111;
+    font-family: 'Courier New', monospace; /* Authentischer Schreibmaschinen-Look */
+    font-size: 0.48rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Einzelne Höhen-Positionen (untereinander aufgereiht) */
+#license-lastname-text {
+    top: 28.3%;        /* 💡 Zeile: Name */
+}
+
+#license-firstname-text {
+    top: 34.2%;        /* 💡 Zeile: First Name */
+}
+
+#license-login-text {
+    top: 40.2%;        /* 💡 Zeile: First login */
+    font-size: 0.48rem; /* Minimal kleiner, da das Datum etwas länger ist */
+}
+
+/* Positioniert die dynamische Landesflagge über dem Flaggenfeld links unten */
+#license-country-flag {
+    position: absolute;
+    bottom: 18.2%;      /* Abstand von der Unterkante */
+    left: 17.7%;        /* Abstand von der linken Kante */
+    width: 8.9%;        /* Deckt die Breite der alten Flagge exakt ab */
+    height: 9.7%;      /* Deckt die Höhe der alten Flagge exakt ab */
+    
+    object-fit: fill;   /* Zwingt die Flagge, die Kanten exakt auszufüllen */
+    border-radius: 1px; /* Minimaler Eckenradius passend zur Grafik */
+}
+
