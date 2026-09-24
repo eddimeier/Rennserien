@@ -51,6 +51,9 @@ Supercars Endurance,Lynk & Co 03 TCR,11328,160,11317,logos/SCE.png,2018,2024,177
 Supercars Endurance,Audi RS 3 LMS,10578,160,8660,logos/SCE.png,2018,2024,1771,1778,13186,13187,8703,8704,9657,9659,1771,1784,2x 50 min,mandatory,
 Supercars Endurance,CUPRA Leon Competición,8726,160,8660,logos/SCE.png,2018,2024,1771,1778,13186,13187,8703,8704,9657,9659,1771,1784,2x 50 min,mandatory,
 Supercars Endurance,Honda Civic TCR,10441,160,8660,logos/SCE.png,2018,2024,1771,1778,13186,13187,8703,8704,9657,9659,1771,1784,2x 50 min,mandatory,
+Supercars Endurance,BMW M2 CS Racing 2021,10599,186,10909,logos/SCE.png,2018,2024,1771,1778,13186,13187,8703,8704,9657,9659,1771,1784,2x 50 min,mandatory,
+Supercars Endurance,BMW M235i Racing,6262,201,6344,logos/SCE.png,2018,2024,1771,1778,13186,13187,8703,8704,9657,9659,1771,1784,2x 50 min,mandatory,
+Supercars Endurance,Alpine A110 Cup,13394,166,13397,logos/SCE.png,2018,2024,1771,1778,13186,13187,8703,8704,9657,9659,1771,1784,2x 50 min,mandatory,
 Tourenwagen_Legenden,AMG-Mercedes CLK DTM,7169,51,7167,logos/Tourenwagen-Legenden.png,1690,2010,2020,2026,7818,7819,13255,13368,1692,1693,10781,10782,2x 25 min,mandatory,https://tourenwagen-legenden.de/klassen/
 Tourenwagen_Legenden,AMG-Mercedes CLK-DTM 2002,13265,51,13264,logos/Tourenwagen-Legenden.png,1690,2010,2020,2026,7818,7819,13255,13368,1692,1693,10781,10782,2x 25 min,mandatory,https://tourenwagen-legenden.de/klassen/
 Tourenwagen_Legenden,ABT-Audi TT-R,13312,51,13264,logos/Tourenwagen-Legenden.png,1690,2010,2020,2026,7818,7819,13255,13368,1692,1693,10781,10782,2x 25 min,mandatory,https://tourenwagen-legenden.de/klassen/
@@ -371,19 +374,28 @@ World_Racing_League,Honda Civic TCR,7125,160,10344,logos/WRL.png,1853,1854,5275,
 World_Racing_League,Hyundai Elantra TCR 2021,10397,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
 World_Racing_League,Lada Vesta TCR,10674,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
 World_Racing_League,Lynk & Co 03 TCR,7926,160,10344,logos/WRL.png,1853,1854,5275,5276,8366,8367,9176,9324,1673,1674,9942,9943,120 min,free,https://www.racewrl.com/
-Austria_GT,KTM X-BOW GTX,9660,73,11990,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Audi R8 LMS Ultra,2037,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,BMW Alpina B6 GT3,1695,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,BMW Z4 GT3,1738,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Ford GT GT3,3754,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Ford Mustang GT3,1782,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,P4-5 Competizione GT3,1821,80,1703,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Porsche 911 GT3 Cup,7983,110,7982,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Porsche 911 GT3 Cup (992),8792,110,12015,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,KTM X-Bow RR,5342,130,5385,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Audi R8 LMS GT4 2020,8900,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,BMW M4 GT4 (F82),8053,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,KTM X-Bow GT4,5767,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Lotus Evora GT4,7162,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Mercedes AMG GT4 2020,9644,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
-Austria_GT,Porsche 718 Cayman GT4 Clubsport,8201,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Cadillac CTS-V.R,2410,75,1704,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Chevrolet Corvette C6.R ZR1,1747,75,1704,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,P4-5 Competizione GT2,5214,75,1704,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,RUF RT12R,1837,75,1704,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Porsche 911 GT3 Cup,7983,110,7982,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Porsche 911 GT3 Cup (992),8792,110,12015,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,KTM X-Bow RR,5342,130,5385,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Audi R8 LMS GT4 2020,8900,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,BMW M4 GT4 (F82),8053,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,KTM X-Bow GT4,5767,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Lotus Evora GT4,7162,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Mercedes AMG GT4 2020,9644,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+Austrian_GT,Porsche 718 Cayman GT4 Clubsport,8201,165,5825,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Audi 90 Quattro,2405,70,1713,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Ford Mustang IMSA GTO,4386,70,1713,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Nissan 300ZX Z32,2868,70,1713,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,BMW 320 Turbo,1700,100,1708,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Chevrolet Corvette Greenwood 1977,4075,100,1708,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Chevrolet Dekon Monza,4145,100,1708,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Fabcar 935,2859,100,1708,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Nissan Silvia Turbo,1815,100,1708,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Nissan Skyline 2000RS,1818,100,1708,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Zakspeed Capri,2044,100,1708,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,BMW M1 Gr. 4,7805,199,7304,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
+STWbis1990,Porsche 934 Turbo RSR,7282,199,7304,logos/histocupTCO.png,7111,7112,5297,5298,2029,2064,2521,2556,2020,2026,1865,1866,22 min,non,https://www.histocup.com/renntermine/
