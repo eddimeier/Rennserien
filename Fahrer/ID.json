@@ -1,0 +1,27 @@
+{
+  "template": "user",
+  "context": {
+    "c": {
+      "user_id": 927406,
+      "title": "Laurenz Sagmeister - User profile",
+      "name": "Laurenz Sagmeister",
+      "team": "Gentleman",
+      "avatar": "https://fra1.digitaloceanspaces.com/user-avatars-prod/927406/94f48036b709441599445e44bbb54968.webp",
+      "header": "https://fra1.digitaloceanspaces.com/user-banners-prod/927406/f92d9d2968c84050a1bb8aca317aa94d.webp",
+      "overview": {
+        "name": "Laurenz Sagmeister",
+        "avatar": "https://fra1.digitaloceanspaces.com/user-avatars-prod/927406/94f48036b709441599445e44bbb54968.webp",
+        "team": "Gentleman",
+        "header": "https://fra1.digitaloceanspaces.com/user-banners-prod/927406/f92d9d2968c84050a1bb8aca317aa94d.webp",
+        "country": {
+          "name": "Austria",
+          "code": "at"
+        },
+        "career": {
+
+        },
+        "vip": false
+      }
+    }
+  }
+}
