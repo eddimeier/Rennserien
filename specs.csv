@@ -4552,10 +4552,10 @@ Combined,Belgium,,100,"7,004",Europe,,TC
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
-4810,Germany,1969,122,620,Inline-4,RWD,215
+4810,Germany,1969,122,620,Inline-4,RWD,212
 ,,,,,,,#N/A
 ,,,,,,,
-,,,,,,,215
+,,,,,,,212
 ,,,,,,,#N/A
 4720,Russia,2015,380,1100,Inline-4,FWD,120
 4720,Russia,2015,380,1100,Inline-4,FWD,120
@@ -4688,27 +4688,27 @@ Combined,Belgium,,100,"7,004",Europe,,TC
 ,,,,,,,
 D Circuit,Thailand,,25,"3,107",Asia,,TC
 ,,,,,,,
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
-4810,Germany,1969,122,620,Inline-4,RWD,215
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
+4810,Germany,1969,122,620,Inline-4,RWD,212
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
@@ -12678,9 +12678,9 @@ Moto Circuit,France,,36,"1,576",Europe,,TC
 8645,Japan,1997,310BHP,1080Kg with Driver,2-Litre 4-Cylinder,FWD,161
 ,,,,,,,
 ,,,,,,,#N/A
+,,,,,,,TC
 ,,,,,,,
-,,,,,,,
-Full Circuit,Germany,,36,"2,784",Europe,,#N/A
+Full Circuit,Germany,,36,"2,784",Europe,,TC
 ,,,,,,,#N/A
 ,,,,,,,
 ,,,,,,,
@@ -13169,11 +13169,11 @@ Combined,Belgium,,100,7.004 km,Europe,,TC
 ,,,,,,,
 Full Circuit,Italy,,36,"3,745 km",Europe,,TC
 ,,,,,,,
-,,,,,,,
+,Belgium,1995,,,Europe,,
 ,,,,,,,
 12012,Germany,2021,503 bhp @ 8400rpm,1260 Kg,4.0l flat-6,RWD,104
 ,,,,,,,
-,,,,,,,
+,Germany,1964,,,,,
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
@@ -13274,25 +13274,25 @@ Moto,Belgium,,56,7004,Europe,,TC
 ,,,,,,,
 ,,,,,,,#N/A
 12012,Germany,2021,503 bhp @ 8400rpm,1260 Kg,4.0l flat-6,RWD,104
-,,,,,,,
+,United States,1987,,,,,#N/A
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,#N/A
 6168,Germany,2019,585 BHP,1390kg with driver,6.3L V8,RWD,80
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+,,,,,,,
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
+13548,United States,1998,304 HP,1055 Kg,2.0L Inline-6,FWD,161
 ,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
+13548,United States,1998,304 HP,1055 Kg,2.0L Inline-6,FWD,161
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,#N/A
@@ -13373,7 +13373,7 @@ Moto,Belgium,,56,7004,Europe,,TC
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
-,,,,,,,
+,Germany,1974,,,,,#N/A
 ,,,,,,,
 ,,,,,,,#N/A
 ,,,,,,,
@@ -13400,3 +13400,54 @@ Moto,Belgium,,56,7004,Europe,,TC
 ,,,,,,,
 ,,,,,,,
 258,Germany,2013,570 BHP,860 KG,"3,4L V8",RWD,55
+,,,,,,,
+13548,United States,1998,304 HP,1055 Kg,2.0L Inline-6,FWD,161
+13548,United States,1998,304 HP,1055 Kg,2.0L Inline-6,FWD,161
+13548,United States,1998,304 HP,1055 Kg,2.0L Inline-6,FWD,161
+13548,United States,1998,304 HP,1055 Kg,2.0L Inline-6,FWD,161
+,,,,,,,
+,,,,,,,
+,,,,,,,
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+,,,,,,,
+,,,,,,,
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+,,,,,,,
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+,,,,,,,
+,,,,,,,
+13539,France,1998,291 HP,1055 Kg,2.0L Inline-4,FWD,161
+,,,,,,,
+13679,Italy,1966,116 HP,663 kg,1.0L Inline-4 ,RWD,212
+,,,,,,,
+13679,Italy,1966,116 HP,663 kg,1.0L Inline-4 ,RWD,212
+,,,,,,,212
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+13679,Italy,1966,116 HP,663 kg,1.0L Inline-4 ,RWD,212
+13679,United Kingdem,1966,128 PH,700 kg,1.3L Inline-4,FWD,212
+,,,,,,,
+,,,,,,,
+13679,Italy,1966,116 HP,663 kg,1.0L Inline-4 ,RWD,212
